@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { registerUser } from "../service/Service";
 import { useNavigate } from "react-router-dom";
 import IUser from "../interfaces/IUser";
@@ -103,6 +104,10 @@ export default function Register() {
                             onChange={(e) => updateState(e)}
                             />
                     </label>
+                </section>
+                <section>
+                <p>Já possui conta? <Link to='/login'>Login</Link></p>
+
                 </section>
                 <section>
                     <button onClick={() => navigate('/home')}>Cancelar</button>

@@ -64,7 +64,7 @@ export default function Login() {
                     </label>
                 </section>
                 <section>
-                    <p>Não possui conta? <Link to='/register'><p>Cadastre-se</p></Link></p>
+                    <p>Não possui conta? <Link to='/register'>Cadastre-se</Link></p>
                 </section>
                 <section>
                     <button type="submit">
