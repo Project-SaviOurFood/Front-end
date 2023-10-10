@@ -1,19 +1,26 @@
 import { useState, ReactNode, createContext } from 'react';
+import IUserResponse from '../interfaces/IUserResponse';
+import { loginUser } from '../service/Service';
+import ILogin from '../interfaces/ILogin';
 
 
 type UserProviderProps = {
   children: ReactNode;
 }
 
-/* type IUserContext = {
-  userResponse: string,
-  setUserResponse: React.Dispatch<React.SetStateAction<IUserResponse>>
-} */
+type IUserContext = {
+  userResponse: IUserResponse,
+  setUserResponse: React.Dispatch<React.SetStateAction<IUserResponse>>,
+  handleLogin(usarioLogin: ILogin): Promise<void>,
+  isLoading: boolean
+}
 
-export const NadaContext = createContext({});
+export const UserContext = createContext({} as IUserContext);
 
 
 export function UserProvider({ children }: UserProviderProps) {
+  const [isLoading, setIsLoading] = useState(false)
+
   const [userResponse, setUserResponse] = useState({
     id: 0,
     name: '',
@@ -23,11 +30,23 @@ export function UserProvider({ children }: UserProviderProps) {
     token: ''
   });
 
+  async function handleLogin(userLogin: ILogin) {
+    setIsLoading(true)
+    try {
+      await loginUser(`/user/login`, userLogin, setUserResponse)
+      alert("Usuário logado com sucesso")
+      setIsLoading(false)
+    } catch (error) {
+      console.log(error)
+      alert("Dados do usuário inconsistentes")
+      setIsLoading(false)
+    }
+  }
 
   return (
-    <NadaContext.Provider value={{userResponse, setUserResponse}}>
-    {children}
-    </NadaContext.Provider>
+    <UserContext.Provider value={{isLoading, userResponse, setUserResponse, handleLogin }}>
+      {children}
+    </UserContext.Provider>
   );
 }
 

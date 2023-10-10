@@ -1,25 +1,27 @@
-import { ChangeEvent, useState } from "react";
-import IRegister from "../interfaces/IRegister";
+import { ChangeEvent, useEffect, useState } from "react";
 import { registerUser } from "../service/Service";
 import { useNavigate } from "react-router-dom";
+import IUser from "../interfaces/IUser";
 
 export default function Register() {
     const navigate = useNavigate();
-    const [register, setRegister] = useState<IRegister>({
+
+    const [register, setRegister] = useState<IUser>({
         name: '',
         email: '',
         password: '',
         picture: '',
     });
     
-    const [registerResponse, setRegisterResponse] = useState<IRegister>({
+    const [registerResponse, setRegisterResponse] = useState<IUser>({
+        id: 0,
         name: '',
         email: '',
         password: '',
         picture: '',
     });
 
-    function updateLogin(e: ChangeEvent<HTMLInputElement>) {
+    function updateState(e: ChangeEvent<HTMLInputElement>) {
         setRegister({
             ...register,
             [e.target.name]: e.target.value
@@ -31,6 +33,7 @@ export default function Register() {
         e.preventDefault();
 
         const {name, password} = register;
+
         if (name.length >= 5 && password.length >= 5) {
             try {
              await registerUser('/user/register', register, setRegisterResponse)
@@ -44,6 +47,12 @@ export default function Register() {
         }
     }
 
+    useEffect(() => {
+        if (registerResponse.id !== 0) {
+            navigate('/login')
+        }
+    }, [registerResponse]);
+
     return (
         <div>
             <form onSubmit={postRegister}>
@@ -55,7 +64,7 @@ export default function Register() {
                             type="text"
                             name="name"
                             value={register.name}
-                            onChange={(e) => updateLogin(e)}
+                            onChange={(e) => updateState(e)}
                         />
                     </label>
                 </section>
@@ -67,7 +76,7 @@ export default function Register() {
                             type="email"
                             name="email"
                             value={register.email}
-                            onChange={(e) => updateLogin(e)}
+                            onChange={(e) => updateState(e)}
                         />
                     </label>
                 </section>
@@ -79,7 +88,7 @@ export default function Register() {
                             type="password"
                             name="password"
                             value={register.password}
-                            onChange={(e) => updateLogin(e)}
+                            onChange={(e) => updateState(e)}
                         />
                     </label>
                 </section>
@@ -91,7 +100,7 @@ export default function Register() {
                             type="text"
                             name="picture"
                             value={register.picture}
-                            onChange={(e) => updateLogin(e)}
+                            onChange={(e) => updateState(e)}
                             />
                     </label>
                 </section>

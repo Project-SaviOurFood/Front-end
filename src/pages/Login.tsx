@@ -1,18 +1,22 @@
-import { ChangeEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ILogin from "../interfaces/ILogin";
-import { loginUser } from "../service/Service";
+import { UserContext } from "../context/UserContext.";
+import { RotatingLines } from "react-loader-spinner";
 
 
 
 export default function Login() {
+    const navigate = useNavigate();
+
     const [login, setLogin] = useState<ILogin>({
         email: '',
         password: ''
     });
-    const [isDisabled, setDisabled] = useState<boolean>(false);
 
-    function updateLogin(e: ChangeEvent<HTMLInputElement>) {
+    const { handleLogin, userResponse, isLoading } = useContext(UserContext)
+
+    function updateState(e: ChangeEvent<HTMLInputElement>) {
         setLogin({
             ...login,
             [e.target.name]: e.target.value
@@ -20,19 +24,21 @@ export default function Login() {
         )
     }
 
-    const postLogin = async(e: ChangeEvent<HTMLInputElement>) => {
-        e.preventDefault();
-        const {password} = login;
-        if (password >= 5) {
-            try {
-                await loginUser('/user/login', login, )
-            }
+    useEffect(() => {
+        if (userResponse.token != '') {
+            navigate('/home')
         }
+    }, [userResponse]);
+
+    function userLogin(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault()
+        handleLogin(login)
     }
+
 
     return (
         <div>
-            <form onSubmit={}>
+            <form onSubmit={userLogin}>
                 <section>
                     <label htmlFor="user">
                         Email
@@ -41,7 +47,7 @@ export default function Login() {
                             type="email"
                             name="email"
                             value={login.email}
-                            onChange={(e) => (updateLogin(e))}
+                            onChange={(e) => (updateState(e))}
                         />
                     </label>
                 </section>
@@ -53,7 +59,7 @@ export default function Login() {
                             type="password"
                             name="password"
                             value={login.password}
-                            onChange={(e) => updateLogin(e)}
+                            onChange={(e) => updateState(e)}
                         />
                     </label>
                 </section>
@@ -61,7 +67,16 @@ export default function Login() {
                     <p>Não possui conta? <Link to='/register'><p>Cadastre-se</p></Link></p>
                 </section>
                 <section>
-                    <button type="submit" disabled={isDisabled}>Login</button>
+                    <button type="submit">
+                        {isLoading ? <RotatingLines
+                            strokeColor="white"
+                            strokeWidth="5"
+                            animationDuration="0.75"
+                            width="24"
+                            visible={true}
+                        /> :
+                            <span>Entrar</span>}
+                    </button>
                 </section>
             </form>
         </div>
