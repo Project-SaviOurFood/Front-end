@@ -1,36 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function NavBar() {
-
+const navigate = useNavigate();
 
 
 return (
     <div>
         <section>
-        <Link to='/home'>
-        <img src="" alt="Logo Image" />
+        <Link to='/'>
+        <img src="src/assets/saviourfood.png" alt="Logo Image" width={150} height={150} />
         </Link>
         </section>
         <section>
-            <a href="">
+            <a href="#about">
             <h3>Sobre nós</h3>
             </a>
         </section>
         <section>
-            <a href="">
+            <a href="#mission">
             <h3>MIssão</h3>
             </a>
         </section>
         <section>
-            <Link to='/login'>
-            <h3>Login</h3>
-            </Link>
+            <button type="button" onClick={() => navigate('/login')}>Login</button>        
         </section>
         <section>
-            <Link to='/register'>
-            <h3>Cadastre-se</h3>
-            </Link>
+        <button type="button" onClick={() => navigate('/register')}>Cadastre-se</button>
         </section>
     </div>
 );

@@ -95,7 +95,7 @@ export default function Register() {
                 </section>
                 <section>
                     <label htmlFor="picture">
-                        Picture
+                        Foto
                         <input
                             id="picture"
                             type="text"
