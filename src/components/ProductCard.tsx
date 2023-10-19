@@ -8,12 +8,12 @@ type ICardsInfo = {
         name: string,
         picture: string,
         value: number,
-        expirationDate: Date,
+        expirationDate: string,
         id: number
     }
 }
 
-export default function Product({
+export default function ProductCard({
     productInfo: {
         picture,
         name,
@@ -23,13 +23,18 @@ export default function Product({
     const [quantity, setQuantity] = useState<number>(0);
     const navigate = useNavigate();
 
-    const {cart, setCart} = useContext(GeneralContext);
+    const { cart, setCart } = useContext(GeneralContext);
 
-    const addCart = ({id, name, picture, value, quantity}: ICart) => {
-        setCart([
-            ...cart,
-            {id ,name, picture, value, quantity}
-        ])
+    const addCart = ({ id, name, picture, value, quantity }: ICart) => {
+        if (cart.length == 0) {
+            setCart([{ id, name, picture, value, quantity }])
+        } else {
+            setCart([
+                ...cart,
+                { id, name, picture, value, quantity }
+            ])
+        }
+        console.log(cart)
     }
 
     return (
@@ -45,7 +50,9 @@ export default function Product({
                         name="image"
                         src={picture}
                         alt="Image Product"
-                        onClick={() => navigate('/product/' + id)} />
+                        onClick={() => navigate('/product/' + id)}
+                        width={150}
+                        height={150} />
                 </label>
             </section>
             <section>
@@ -53,17 +60,14 @@ export default function Product({
             </section>
             <section>
                 <p>
-                    {new Intl.DateTimeFormat(undefined, {
-                        dateStyle: 'full',
-                        timeStyle: 'medium',
-                    }).format(new Date(expirationDate))}
+                    {expirationDate}
                 </p>
             </section>
             <section>
-                <button type="button" onClick={() => setQuantity(quantity+1)}>+</button>
+                <button type="button" onClick={() => setQuantity(quantity + 1)}>+</button>
                 <p>{quantity}</p>
-                <button type="button" onClick={() => setQuantity(quantity-1)}>-</button>
-                <button type="button" onClick={() => addCart({id, name, picture, value, quantity})} >Adicionar ao Carrinho</button>
+                <button type="button" onClick={() => setQuantity(quantity - 1)}>-</button>
+                <button type="button" onClick={() => addCart({ id, name, picture, value, quantity })} >Adicionar ao Carrinho</button>
             </section>
         </div>
     );
