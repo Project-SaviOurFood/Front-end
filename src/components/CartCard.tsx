@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GeneralContext } from "../context/GeneralContext";
 
 type ICartInfo = {
@@ -11,7 +11,7 @@ type ICartInfo = {
     }
 }
 
-export default function Cart({
+export default function CartCard({
     productInfo: {
         id,
         picture,
@@ -20,12 +20,32 @@ export default function Cart({
         quantity
          } }: ICartInfo) {
 const [qtd, setQtd] = useState<number>(quantity);
-const {cart, setCart} = useContext(GeneralContext);
+const {cart, setCart, setTotal} = useContext(GeneralContext);
 
 const deleteProductCart = (id: number) => {
     const newCart =  cart.filter((cart) => cart.id != id)
     setCart(newCart);
 }
+
+const sumTotal = () => {
+    let total = 0;
+    cart.forEach(({ value, quantity }) => {
+        total += (quantity * value);
+    })
+    setTotal(total)
+}
+
+const updateQuantity = () => {
+   const index = cart.findIndex((cart) => cart.id == id);
+   cart[index].quantity = qtd;
+}
+
+
+useEffect(() => {
+    updateQuantity();
+    sumTotal();
+}, [cart.length, qtd])
+
 
     return (
         <div>
@@ -39,7 +59,9 @@ const deleteProductCart = (id: number) => {
                         type="image"
                         name="image"
                         src={picture}
-                        alt="Image Product" />
+                        alt="Image Product"
+                        width={100}
+                        height={100} />
                 </label>
             </section>
             <section>

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GeneralContext } from "../context/GeneralContext";
 import ICart from "../interfaces/ICart";
@@ -20,22 +20,21 @@ export default function ProductCard({
         value,
         expirationDate,
         id } }: ICardsInfo) {
-    const [quantity, setQuantity] = useState<number>(0);
+    const [quantity, setQuantity] = useState<number>(1);
     const navigate = useNavigate();
 
     const { cart, setCart } = useContext(GeneralContext);
 
     const addCart = ({ id, name, picture, value, quantity }: ICart) => {
-        if (cart.length == 0) {
-            setCart([{ id, name, picture, value, quantity }])
-        } else {
             setCart([
                 ...cart,
                 { id, name, picture, value, quantity }
             ])
-        }
-        console.log(cart)
     }
+
+    useEffect(() => {
+        console.log(cart)
+    }, [cart])
 
     return (
         <div>

@@ -26,9 +26,6 @@ const filterSearch = (search: string) => {
                 </section>
             </ul>
         </header>
-
-
-    
     </>
   )
 }

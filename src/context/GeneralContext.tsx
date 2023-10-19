@@ -2,15 +2,17 @@ import { useState, createContext, useContext, useEffect } from 'react';
 import { IChildren } from '../interfaces/IChildren';
 import IProduct from '../interfaces/IProduct';
 import { get } from '../service/Service';
-import { UserContext } from './UserContext.';
+import { UserContext } from './UserContext';
 import ICategory from '../interfaces/ICategory';
 import ICart from '../interfaces/ICart';
 
 type IProductContext = {
+  total: number,
   productResponse: IProduct[],
   categoryResponse: ICategory[],
   cart: ICart[],
   filterProducts: IProduct[],
+  setTotal: React.Dispatch<React.SetStateAction<number>>,
   setFilterProducts: React.Dispatch<React.SetStateAction<IProduct[]>>,
   setCart: React.Dispatch<React.SetStateAction<ICart[]>>
   setCategoryResponse: React.Dispatch<React.SetStateAction<ICategory[]>>,
@@ -25,6 +27,7 @@ export function GeneralProvider({ children }: IChildren) {
   const [categoryResponse, setCategoryResponse] = useState([] as ICategory[]);
   const [cart, setCart] = useState([] as ICart[]);
   const [filterProducts, setFilterProducts] = useState<IProduct[]>([]);
+  const [total, setTotal] = useState<number>(0);
 
 
   const { userResponse: { token }, handleLogout } = useContext(UserContext);
@@ -71,10 +74,12 @@ export function GeneralProvider({ children }: IChildren) {
       categoryResponse,
       cart,
       filterProducts,
+      total,
+      setTotal,
       setFilterProducts,
       setCart,
       setProductResponse,
-      setCategoryResponse
+      setCategoryResponse,
     }}>
       {children}
     </GeneralContext.Provider>

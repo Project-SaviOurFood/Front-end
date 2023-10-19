@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
  //import HeaderFilter from '../components/HeaderFilter'
 import SearchFilter from '../components/SarchFilter'
-import { UserContext } from '../context/UserContext.';
+import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { GeneralContext } from '../context/GeneralContext';
 import ProductCard from '../components/ProductCard';
