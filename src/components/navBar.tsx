@@ -6,7 +6,7 @@ const navigate = useNavigate();
 
 
 return (
-    <div>
+    <div    >
         <section>
         <Link to='/'>
         <img src="src/assets/saviourfood.png" alt="Logo Image" width={150} height={150} />
@@ -19,7 +19,7 @@ return (
         </section>
         <section>
             <a href="#mission">
-            <h3>MIssão</h3>
+            <h3>Missão</h3>
             </a>
         </section>
         <section>
