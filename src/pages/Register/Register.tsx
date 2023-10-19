@@ -1,8 +1,10 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { registerUser } from "../service/Service";
+import { registerUser } from "../../service/Service";
 import { useNavigate } from "react-router-dom";
-import IUser from "../interfaces/IUser";
+import IUser from "../../interfaces/IUser";
+import '../Register/RegisterStyle.css'
+
 
 export default function Register() {
     const navigate = useNavigate();
@@ -56,6 +58,7 @@ export default function Register() {
 
     return (
         <div>
+            
             <form onSubmit={postRegister}>
                 <section>
                     <label htmlFor="name">
@@ -114,6 +117,7 @@ export default function Register() {
                     <button type="submit">Cadastrar</button>
                 </section>
                 </form>
+               <div><img src="\src\assets\legumes.png" alt="" className="imgregister" /></div>
         </div>
     );
 }

@@ -1,10 +1,9 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ILogin from "../interfaces/ILogin";
-import { UserContext } from "../context/UserContext.";
+import ILogin from "../../interfaces/ILogin";
+import { UserContext } from "../../context/UserContext.";
 import { RotatingLines } from "react-loader-spinner";
-
-
+import '../../pages/Login/Style.css';
 
 export default function Login() {
     const navigate = useNavigate();
@@ -37,10 +36,11 @@ export default function Login() {
 
 
     return (
-        <div>
-            <form onSubmit={userLogin}>
-                <section>
-                    <label htmlFor="user">
+
+        <div  >
+            <form onSubmit={userLogin} className="flex flex-col gap-4">
+                <section className="partemail">
+                    <label htmlFor="user" className="text-2xl">
                         Email
                         <input
                             id="user"
@@ -50,6 +50,7 @@ export default function Login() {
                             onChange={(e) => (updateState(e))}
                         />
                     </label>
+                    
                 </section>
                 <section>
                     <label htmlFor="password">
@@ -79,7 +80,12 @@ export default function Login() {
                     </button>
                 </section>
             </form>
+            <div> <img src="\src\assets\imgman.png" alt="" className="imglogin" /> </div>
+          
         </div>
+    
     );
 
 }
+
+   

@@ -1,0 +1,19 @@
+.imgregister{
+    height: 659px;
+    margin-top: -500px;
+    margin-left: -92rem;
+    border-radius: 10px 0px 0px 10px;
+  }
+
+  #text{
+    font-size: 20px;
+  }
+
+  a {
+    font-weight: 500;
+    color: #7A7878;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #494949;
+  }
