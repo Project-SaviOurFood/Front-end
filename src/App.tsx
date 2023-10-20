@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
-import Product from './pages/Products/Product';
+import Product from './pages/Product/Product';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Cart from './pages/Cart/Cart';
@@ -9,6 +9,7 @@ import PurchaseSuccess from './pages/ PurchaseSuccess';
 import Category from './pages/Categories/Category';
 import FormCategory from './pages/Categories/FormCategory';
 import DeleteCategory from './pages/Categories/DeleteCategory';
+
 
 
 function App() {
