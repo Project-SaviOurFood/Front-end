@@ -5,7 +5,7 @@ export default interface IProduct {
     id: number,
     name: string,
     value: number,
-    expirationDate: Date,
+    expirationDate: string,
     picture: string,
     category: ICategory | null,
     user: IUser | null
