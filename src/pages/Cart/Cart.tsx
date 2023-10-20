@@ -48,7 +48,7 @@ export default function Cart() {
                     <p>Total: R${total.toFixed(2)}</p>
                 </section>
                 <section>
-                    <button onClick={() => navigate('/finish')}>Finalizar Compra</button>
+                    <button disabled={cart.length == 0} onClick={() => navigate('/finish')}>Finalizar Compra</button>
                 </section>
             </section>
         </div>

@@ -40,7 +40,7 @@ export default function Login() {
         <div  >
             <form onSubmit={userLogin} id="container" className=" bg-white rounded-lg mt-8 bg-no-repeat">
                 <section className="partemail">
-                    <label htmlFor="user" className="text-xl flex justify-center">
+                    <label htmlFor="user" className="text-5xl">
                         Email
                         <input
                             className="pr-2 pl-2"

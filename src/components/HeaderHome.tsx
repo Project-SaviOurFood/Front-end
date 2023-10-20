@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 
 export default function HeaderHome() {
+const {userResponse: {token}} = useContext(UserContext);
+
 const navigate = useNavigate();
 
 
@@ -17,6 +21,17 @@ return (
             <h3>Sobre nós</h3>
             </a>
         </section>
+        {token != "" ?
+        <section>
+        <button type="button" onClick={() => navigate('/products')}>
+            Produtos
+        </button>
+        <button type="button" onClick={() => navigate('/categories')}>
+            Categorias
+        </button> 
+        </section> 
+        :
+        ""}
         <section>
             <a href="#mission">
             <h3>Missão</h3>

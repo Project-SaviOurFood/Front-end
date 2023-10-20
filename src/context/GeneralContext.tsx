@@ -13,6 +13,8 @@ type IProductContext = {
   cart: ICart[],
   filterProducts: IProduct[],
   ong: string,
+  getCategories(): Promise<void>,
+  getProducts(): Promise<void>,
   setOng: React.Dispatch<React.SetStateAction<string>>,
   setTotal: React.Dispatch<React.SetStateAction<number>>,
   setFilterProducts: React.Dispatch<React.SetStateAction<IProduct[]>>,
@@ -69,7 +71,7 @@ export function GeneralProvider({ children }: IChildren) {
       getProducts();
       setFilterProducts(productResponse)
     }
-  }, [token, productResponse.length, categoryResponse.length])
+  }, [token, productResponse.length])
 
   return (
     <GeneralContext.Provider value={{
@@ -79,6 +81,8 @@ export function GeneralProvider({ children }: IChildren) {
       filterProducts,
       total,
       ong,
+      getCategories,
+      getProducts,
       setOng,
       setTotal,
       setFilterProducts,

@@ -9,6 +9,7 @@ import PurchaseSuccess from './pages/ PurchaseSuccess';
 import Category from './pages/Categories/Category';
 import FormCategory from './pages/Categories/FormCategory';
 import DeleteCategory from './pages/Categories/DeleteCategory';
+import FormProduct from './pages/Product/FormProduct';
 
 
 
@@ -24,6 +25,8 @@ function App() {
     <Route path='/editCategory/:id' element={<FormCategory/>} />
     <Route path='/deleteCategory/:id' element={<DeleteCategory/>} />
     <Route path='/products' element={<Product/>} />
+    <Route path='/registerProduct' element={<FormProduct/>} />
+    <Route path='/editProduct/:id' element={<FormProduct/>} />
     <Route path='/cart' element={<Cart/>} />
     <Route path='/finish' element={<PurchaseSuccess/>} />
     </Routes>

@@ -11,7 +11,7 @@ import './Product.css'
 
 function Product() {
 const {userResponse: {token}} = useContext(UserContext);
-const {filterProducts} = useContext(GeneralContext);
+const {filterProducts, getProducts} = useContext(GeneralContext);
 const navigate = useNavigate();
 
 
@@ -22,6 +22,9 @@ useEffect(() => {
     }
   }, [token])
 
+  useEffect(() => {
+    getProducts()
+  }, [])
   
 
   return (
