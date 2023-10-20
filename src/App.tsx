@@ -5,7 +5,7 @@ import Login from './pages/Login'
 //import Home from './pages/Home'
 /* import HeaderFilter from './components/HeaderFilter'
 import SearchFilter from './components/SarchFilter' */
-import Product from './pages/Product'
+import Product from './pages/product/Product'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Cart from './pages/Cart'

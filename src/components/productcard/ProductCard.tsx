@@ -1,7 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { GeneralContext } from "../context/GeneralContext";
-import ICart from "../interfaces/ICart";
+import { GeneralContext } from "../../context/GeneralContext";
+import ICart from "../../interfaces/ICart";
+import Cart from '../../assets/cart.png';
+import Mais from '../../assets/+.png';
+import Menos from '../../assets/-.png';
+import './ProductCard.css';
 
 type ICardsInfo = {
     productInfo: {
@@ -37,9 +41,9 @@ export default function ProductCard({
     }, [cart])
 
     return (
-        <div>
-            <section>
-                <h2>{name}</h2>
+        <div id="container-card" className="w-80 flex-col text-center content-start mt-11">
+            <section className="">
+                <h2 className="font-bold p-3">{name}</h2>
             </section>
             <section>
                 <label htmlFor="image">
@@ -50,23 +54,23 @@ export default function ProductCard({
                         src={picture}
                         alt="Image Product"
                         onClick={() => navigate('/product/' + id)}
-                        width={150}
-                        height={150} />
+                        width={170}
+                        height={190} />
                 </label>
             </section>
-            <section>
-                <h4>R$ {value.toFixed(2)}</h4>
+            <section className="p-4">
+                <h4 className="font-bold">R$ {value.toFixed(2)}</h4>
             </section>
             <section>
-                <p>
+                <p className="font-bold mb-1">
                     {expirationDate}
                 </p>
             </section>
-            <section>
-                <button type="button" onClick={() => setQuantity(quantity + 1)}>+</button>
-                <p>{quantity}</p>
-                <button type="button" onClick={() => setQuantity(quantity - 1)}>-</button>
-                <button type="button" onClick={() => addCart({ id, name, picture, value, quantity })} >Adicionar ao Carrinho</button>
+            <section className="flex gap-7 items-center justify-center">
+                <button id="menos" type="button" onClick={() => setQuantity(quantity - 1)}><img src={Menos} alt="Sinal de menos" /></button>
+                <p className="font-bold text-cinza bg-gelo w-20 p-1 rounded-lg">{quantity}</p>
+                <button id="mais" type="button" onClick={() => setQuantity(quantity + 1)}><img src={Mais} alt="Sinal de mais" /></button>
+                <button id="carrinho" type="button" onClick={() => addCart({ id, name, picture, value, quantity })} ><img src={Cart} alt="carrinho" /></button>
             </section>
         </div>
     );

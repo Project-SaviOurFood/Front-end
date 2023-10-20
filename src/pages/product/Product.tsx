@@ -1,11 +1,12 @@
 import { useContext, useEffect } from 'react'
  //import HeaderFilter from '../components/HeaderFilter'
-import SearchFilter from '../components/searchfilter/SarchFilter'
-import { UserContext } from '../context/UserContext';
+import SearchFilter from '../../components/searchfilter/SarchFilter'
+import { UserContext } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
-import { GeneralContext } from '../context/GeneralContext';
-import ProductCard from '../components/ProductCard';
-import HeaderFilter from '../components/headerfilter/HeaderFilter';
+import { GeneralContext } from '../../context/GeneralContext';
+import ProductCard from '../../components/productcard/ProductCard';
+import HeaderFilter from '../../components/headerfilter/HeaderFilter';
+import './Product.css'
 
 
 function Product() {
@@ -27,9 +28,9 @@ useEffect(() => {
    <>
    <HeaderFilter />
    <SearchFilter />
-      <div>
+      <div id="container-product">
       {filterProducts.map(({name, picture, expirationDate, value, id}) => (
-        <div key={id}>
+        <div key={id} className=''>
           <ProductCard productInfo={{name, picture, expirationDate, value, id}} />
         </div>
       ))}
