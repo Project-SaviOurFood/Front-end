@@ -12,7 +12,6 @@ import FormCategory from './pages/Categories/FormCategory';
 import DeleteCategory from './pages/Categories/DeleteCategory';
 
 
-
 function App() {
   return (
     <>

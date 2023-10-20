@@ -1,0 +1,44 @@
+.imglogin{
+    background-image: url(../../assets/imgman.png);
+    height: 659px;
+    margin-top: -426px;
+    margin-left: -90rem;
+    border-radius: 10px 0px 0px 10px;
+}
+
+
+input{
+    position: relative;
+    padding: 10px;
+    outline: none;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #000000;
+    color: #BEBEBE;
+}
+  
+button{
+    margin: 15px;
+    display: inline;
+    margin-top: 2px;
+    margin-left: 11px;
+}
+  
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 13rem;
+}
+  
+
+a {
+    font-weight: 500;
+    color: #7A7878;
+    text-decoration: inherit;
+  }
+
+  a:hover {
+    color: #FF5757;
+  }

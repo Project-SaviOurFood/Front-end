@@ -3,7 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 981.5px;
+  height: 595px;
+  margin-right: 1rem;
 }
+
+
 
 .logo {
   height: 6em;
