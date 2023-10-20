@@ -1,9 +1,9 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import ILogin from "../../interfaces/ILogin";
-import { UserContext } from "../../context/UserContext.";
+import { UserContext } from "../../context/UserContext";
 import { RotatingLines } from "react-loader-spinner";
-import '../../pages/Login/Style.css';
+import '../../pages/Login/Style.css'; 
 
 
 export default function Login() {
@@ -40,7 +40,7 @@ export default function Login() {
         <div  >
             <form onSubmit={userLogin} className="flex flex-col gap-4">
                 <section className="partemail">
-                    <label htmlFor="user" className="text-2xl">
+                    <label htmlFor="user" className="text-5xl">
                         Email
                         <input
                             id="user"
@@ -53,7 +53,7 @@ export default function Login() {
                   
                 </section>
                 <section>
-                    <label htmlFor="password">
+                    <label htmlFor="password" className="text-2xl">
                         Senha
                         <input
                             id="password"
@@ -80,8 +80,7 @@ export default function Login() {
                     </button>
                 </section>
             </form>
-            <div> <img src="\src\assets\imgman.png" alt="" className="imglogin" /> </div>
-          
+            <div> <img src="src/assets/imgman.png" alt="" className="imglogin" /></div>
         </div>
     
     );
