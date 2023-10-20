@@ -12,6 +12,8 @@ type IProductContext = {
   categoryResponse: ICategory[],
   cart: ICart[],
   filterProducts: IProduct[],
+  ong: string,
+  setOng: React.Dispatch<React.SetStateAction<string>>,
   setTotal: React.Dispatch<React.SetStateAction<number>>,
   setFilterProducts: React.Dispatch<React.SetStateAction<IProduct[]>>,
   setCart: React.Dispatch<React.SetStateAction<ICart[]>>
@@ -28,6 +30,7 @@ export function GeneralProvider({ children }: IChildren) {
   const [cart, setCart] = useState([] as ICart[]);
   const [filterProducts, setFilterProducts] = useState<IProduct[]>([]);
   const [total, setTotal] = useState<number>(0);
+  const [ong, setOng] = useState<string>("ActionAid");
 
 
   const { userResponse: { token }, handleLogout } = useContext(UserContext);
@@ -66,7 +69,7 @@ export function GeneralProvider({ children }: IChildren) {
       getProducts();
       setFilterProducts(productResponse)
     }
-  }, [token, productResponse.length])
+  }, [token, productResponse.length, categoryResponse.length])
 
   return (
     <GeneralContext.Provider value={{
@@ -75,6 +78,8 @@ export function GeneralProvider({ children }: IChildren) {
       cart,
       filterProducts,
       total,
+      ong,
+      setOng,
       setTotal,
       setFilterProducts,
       setCart,

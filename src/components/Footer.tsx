@@ -15,7 +15,7 @@ function Footer() {
         <section>
           <div>
             <p>Savi Our Food  Generation | Copyright: {data}</p>
-            <p>Acesse nossa organização GitHub: </p>
+            <p>Acesse nossa organização no GitHub: </p>
             <div>
               <a href="https://github.com/Project-SaviOurFood" target='_blank'>
               <img src="src/assets/github.png" alt="GitHub logo" width={50} height={50}/>

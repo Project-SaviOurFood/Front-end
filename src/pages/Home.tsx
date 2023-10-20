@@ -1,4 +1,4 @@
- import NavBar from "../components/navBar";
+ import HeaderHome from "../components/HeaderHome";
 import mockCategories from "../utils/mockCategories";
 
 
@@ -6,7 +6,7 @@ import mockCategories from "../utils/mockCategories";
 export default function Home() {
     return (
         <>
-        <NavBar />
+        <HeaderHome />
         <main>
             <section> 
                 <h2>Savi Our Food</h2>

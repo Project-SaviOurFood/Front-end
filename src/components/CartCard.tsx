@@ -50,9 +50,6 @@ useEffect(() => {
     return (
         <div>
             <section>
-                <h2>{name}</h2>
-            </section>
-            <section>
                 <label htmlFor="image">
                     <input
                         id="image"
@@ -64,6 +61,7 @@ useEffect(() => {
                         height={100} />
                 </label>
             </section>
+                <h2>{name}</h2>
             <section>
                 <h4>R$ {value.toFixed(2)}</h4>
             </section>

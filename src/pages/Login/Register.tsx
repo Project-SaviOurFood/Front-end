@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { registerUser } from "../service/Service";
+import { registerUser } from "../../service/Service";
 import { useNavigate } from "react-router-dom";
-import IUser from "../interfaces/IUser";
+import IUser from "../../interfaces/IUser";
 
 export default function Register() {
     const navigate = useNavigate();
