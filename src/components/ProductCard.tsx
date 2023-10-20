@@ -64,6 +64,10 @@ export default function ProductCard({
                 <button type="button" onClick={() => setQuantity(quantity - 1)}>-</button>
                 <button type="button" onClick={() => addCart({ id, name, picture, value, quantity })} >Adicionar ao Carrinho</button>
             </section>
+            <section>
+                <button type="button" onClick={() => navigate(`/editProduct/${id}`)} >Editar</button>
+                <button type="button" onClick={() => navigate(`/deleteProduct/${id}`)} >Deletar</button>
+            </section>
         </div>
     );
 }

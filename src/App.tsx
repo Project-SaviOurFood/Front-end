@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Register from './pages/Login/Register';
+import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Product from './pages/Products/Product';
 import Footer from './components/Footer';
@@ -9,6 +9,7 @@ import PurchaseSuccess from './pages/ PurchaseSuccess';
 import Category from './pages/Categories/Category';
 import FormCategory from './pages/Categories/FormCategory';
 import DeleteCategory from './pages/Categories/DeleteCategory';
+import FormProduct from './pages/Products/FormProduct';
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
     <Route path='/editCategory/:id' element={<FormCategory/>} />
     <Route path='/deleteCategory/:id' element={<DeleteCategory/>} />
     <Route path='/products' element={<Product/>} />
+    <Route path='/registerProduct' element={<FormProduct/>} />
+    <Route path='/editProduct/:id' element={<FormProduct/>} />
     <Route path='/cart' element={<Cart/>} />
     <Route path='/finish' element={<PurchaseSuccess/>} />
     </Routes>

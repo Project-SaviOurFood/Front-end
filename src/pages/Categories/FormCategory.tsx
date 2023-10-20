@@ -98,14 +98,14 @@ export default function FormCategory() {
       </h1>
       <form onSubmit={newCategory}>
         <div>
-          <label htmlFor="type">Tipo</label>
+          <label htmlFor="type">Tipo:</label>
           <input
               type="text"
               placeholder="Tipo"
               name='type'
               value={category.type}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)} />
-          <label htmlFor="descricao">Descrição da Categoria</label>
+          <label htmlFor="descricao">Descrição da Categoria:</label>
           <input
             type="text"
             placeholder="Descrição"

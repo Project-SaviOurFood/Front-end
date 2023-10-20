@@ -26,7 +26,7 @@ export default function Login() {
 
     useEffect(() => {
         if (userResponse.token != '') {
-            navigate('/home')
+            navigate('/products')
         }
     }, [userResponse]);
 
@@ -40,7 +40,7 @@ export default function Login() {
         <div  >
             <form onSubmit={userLogin} className="flex flex-col gap-4">
                 <section className="partemail">
-                    <label htmlFor="user" className="text-5xl">
+                    <label htmlFor="user" className="text-2xl">
                         Email
                         <input
                             id="user"
