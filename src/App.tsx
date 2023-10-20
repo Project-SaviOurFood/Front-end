@@ -27,6 +27,7 @@ function App() {
     <Route path='/products' element={<Product/>} />
     <Route path='/registerProduct' element={<FormProduct/>} />
     <Route path='/editProduct/:id' element={<FormProduct/>} />
+    <Route path='/deleteProduct/:id' element={<DeleteCategory/>} />
     <Route path='/cart' element={<Cart/>} />
     <Route path='/finish' element={<PurchaseSuccess/>} />
     </Routes>

@@ -89,14 +89,14 @@ export default function FormProduct() {
             Authorization: userResponse.token,
           },
         });
-        toastAlerta('Postagem atualizada com sucesso', 'sucesso');
+        toastAlerta('Produto atualizado com sucesso', 'sucesso');
         navigate('/products');
       } catch (error: any) {
         if (error.toString().includes('403')) {
           toastAlerta('O token expirou, favor logar novamente', 'info')
           handleLogout()
         } else {
-          toastAlerta('Erro ao atualizar a Postagem', 'erro');
+          toastAlerta('Erro ao atualizar o Produto', 'erro');
         }
       }
     } else {
@@ -107,14 +107,14 @@ export default function FormProduct() {
           },
         });
 
-        toastAlerta('Postagem cadastrada com sucesso', 'sucesso');
+        toastAlerta('Produto cadastrado com sucesso', 'sucesso');
         navigate('/products')
       } catch (error: any) {
         if (error.toString().includes('403')) {
           toastAlerta('O token expirou, favor logar novamente', 'info')
           handleLogout()
         } else {
-          toastAlerta('Erro ao cadastrar a Postagem', 'erro');
+          toastAlerta('Erro ao cadastrar O Produto', 'erro');
         }
       }
     }
@@ -128,7 +128,7 @@ export default function FormProduct() {
 
       <form onSubmit={newProduct}>
         <div>
-          <label htmlFor="titulo">Nome:</label>
+          <label htmlFor="name">Nome:</label>
           <input
             value={product.name}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
@@ -139,7 +139,7 @@ export default function FormProduct() {
           />
         </div>
         <div>
-          <label htmlFor="titulo">Date de Validade:</label>
+          <label htmlFor="expirationDate">Date de Validade:</label>
           <input
             value={product.expirationDate}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
@@ -150,7 +150,7 @@ export default function FormProduct() {
           />
         </div>
         <div>
-          <label htmlFor="titulo">Valor:</label>
+          <label htmlFor="value">Valor:</label>
           <input
             value={product.value}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
@@ -161,7 +161,7 @@ export default function FormProduct() {
           />
         </div>
         <div>
-          <label htmlFor="titulo">Foto:</label>
+          <label htmlFor="picture">Foto:</label>
           <input
             value={product.picture}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
