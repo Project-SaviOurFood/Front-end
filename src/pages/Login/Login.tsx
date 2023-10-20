@@ -26,7 +26,7 @@ export default function Login() {
 
     useEffect(() => {
         if (userResponse.token != '') {
-            navigate('/home')
+            navigate('/products')
         }
     }, [userResponse]);
 
@@ -70,7 +70,7 @@ export default function Login() {
                     <p className="text-sm flex justify-center"><Link to='/register'>Cadastre-se</Link ></p>
                 </section>
                 <section className="text-xl h-12 flex justify-center">
-                    <button type="submit">
+                    <button type="submit" id="buttonLogin">
                         {isLoading ? <RotatingLines
                             strokeColor="white"
                             strokeWidth="5"
