@@ -38,11 +38,12 @@ export default function Login() {
 
     return (
         <div  >
-            <form onSubmit={userLogin} className="flex flex-col gap-4">
+            <form onSubmit={userLogin} id="container" className=" bg-white rounded-lg mt-8 bg-no-repeat">
                 <section className="partemail">
-                    <label htmlFor="user" className="text-5xl">
+                    <label htmlFor="user" className="text-xl flex justify-center">
                         Email
                         <input
+                            className="pr-2 pl-2"
                             id="user"
                             type="email"
                             name="email"
@@ -53,7 +54,7 @@ export default function Login() {
                   
                 </section>
                 <section>
-                    <label htmlFor="password" className="text-2xl">
+                    <label htmlFor="password" className="text-xl flex justify-center">
                         Senha
                         <input
                             id="password"
@@ -65,9 +66,10 @@ export default function Login() {
                     </label>
                 </section>
                 <section>
-                    <p>Não possui conta? <Link to='/register'>Cadastre-se</Link></p>
+                    <p className="text-sm flex justify-center">Não possui conta? </p>
+                    <p className="text-sm flex justify-center"><Link to='/register'>Cadastre-se</Link ></p>
                 </section>
-                <section>
+                <section className="text-xl h-12 flex justify-center">
                     <button type="submit">
                         {isLoading ? <RotatingLines
                             strokeColor="white"
@@ -76,7 +78,7 @@ export default function Login() {
                             width="24"
                             visible={true}
                         /> :
-                            <span>Entrar</span>}
+                            <span id="buttonLogin">Entrar</span>}
                     </button>
                 </section>
             </form>

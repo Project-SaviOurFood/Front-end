@@ -59,11 +59,12 @@ export default function Register() {
     return (
         <div>
             
-            <form onSubmit={postRegister}>
+            <form onSubmit={postRegister} id="container" className=" bg-white rounded-lg mt-8 bg-no-repeat">
                 <section>
-                    <label htmlFor="name">
+                    <label htmlFor="name" className="text-xl flex justify-center">
                         Name
                         <input
+                        className="pr-2 pl-2"
                             id="name"
                             type="text"
                             name="name"
@@ -73,9 +74,10 @@ export default function Register() {
                     </label>
                 </section>
                 <section>
-                    <label htmlFor="email">
+                    <label htmlFor="email" className="text-xl flex justify-center">
                         Email
                         <input
+                        className="pr-2 pl-2"
                             id="email"
                             type="email"
                             name="email"
@@ -85,9 +87,10 @@ export default function Register() {
                     </label>
                 </section>
                 <section>
-                    <label htmlFor="password">
+                    <label htmlFor="password" className="text-xl flex justify-center">
                         Senha
                         <input
+                        className="pr-2 pl-2"
                             id="password"
                             type="password"
                             name="password"
@@ -97,9 +100,10 @@ export default function Register() {
                     </label>
                 </section>
                 <section>
-                    <label htmlFor="picture">
+                    <label htmlFor="picture" className="text-xl flex justify-center">
                         Picture
                         <input
+                        className="pr-2 pl-2"
                             id="picture"
                             type="text"
                             name="picture"
@@ -109,12 +113,13 @@ export default function Register() {
                     </label>
                 </section>
                 <section>
-                <p>Já possui conta? <Link to='/login'>Login</Link></p>
+                <p className="text-sm flex justify-center">Já possui conta?</p>
+                <p className="text-sm flex justify-center"><Link to='/login'>Login</Link></p>
 
                 </section>
-                <section>
-                    <button onClick={() => navigate('/home')}>Cancelar</button>
-                    <button type="submit">Cadastrar</button>
+                <section className="text-xl h-12 flex justify-center mt-3">
+                    <button onClick={() => navigate('/home')} id="buttonRegister">Cancelar</button>
+                    <button type="submit" id="buttonRegister">Cadastrar</button>
                 </section>
                 </form>
                <div><img src="\src\assets\legumes.png" alt="" className="imgregister" /></div>
