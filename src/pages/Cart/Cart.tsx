@@ -20,15 +20,14 @@ export default function Cart() {
     }, [token])
 
 
+
     return (
         <div>
             <NavBar />
             <section>
                 <h1>Carrinho</h1>
                 {cart.map(({ id, name, picture, value, quantity }) => (
-                    <section>
                         <CartCard productInfo={{ id, name, picture, value, quantity }} />
-                    </section>
                 ))}
             </section>
             <section>

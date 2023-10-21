@@ -10,6 +10,7 @@ import Category from './pages/Categories/Category';
 import FormCategory from './pages/Categories/FormCategory';
 import DeleteCategory from './pages/Categories/DeleteCategory';
 import FormProduct from './pages/Product/FormProduct';
+import DeletarProduct from './pages/Product/DeleterProduct';
 
 
 
@@ -27,7 +28,7 @@ function App() {
     <Route path='/products' element={<Product/>} />
     <Route path='/registerProduct' element={<FormProduct/>} />
     <Route path='/editProduct/:id' element={<FormProduct/>} />
-    <Route path='/deleteProduct/:id' element={<DeleteCategory/>} />
+    <Route path='/deleteProduct/:id' element={<DeletarProduct/>} />
     <Route path='/cart' element={<Cart/>} />
     <Route path='/finish' element={<PurchaseSuccess/>} />
     </Routes>

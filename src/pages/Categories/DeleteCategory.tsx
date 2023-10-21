@@ -63,8 +63,8 @@ export default function DeleteCategory() {
             <h1>Deletar tema</h1>
             <p >Você tem certeza de que deseja apagar Categoria a seguir?</p>
             <div>
-                <header>{category.type}</header>
-                <p>{category.description}</p>
+                <header><b>Categoria:</b> {category.type}</header>
+                <p><b>Descrição da Categoria</b> {category.description}</p>
                 <div className="flex">
                     <button onClick={() => navigate('/categories')}>Não</button>
                     <button onClick={() => deleteCategory()}>

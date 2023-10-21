@@ -65,13 +65,13 @@ export default function DeletarProduct() {
       <h1>Deletar Produto</h1>
       <p>Você tem certeza de que deseja apagar o Produto a seguir?</p>
       <div>
-        <header>{product.name}</header>
+        <header><b>Nome do Produto:</b>  {product.name}</header>
         <div>
             <img src={product.picture} alt="Imge Product" />
         </div>
         <div>
-          <p>{product.expirationDate}</p>
-          <p>{product.value}</p>
+          <p><b>Data de Validade:</b>  {product.expirationDate}</p>
+          <p><b>Valor:</b> {product.value}</p>
         </div>
         <div>
           <button onClick={() => navigate('/products')}>Não</button>

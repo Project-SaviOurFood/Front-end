@@ -14,7 +14,7 @@ export default function FormProduct() {
   const { id } = useParams<{ id: string }>();
 
   const { userResponse, handleLogout } = useContext(UserContext);
-  const { getCategories, categoryResponse } = useContext(GeneralContext);
+  const { getCategories, categoryResponse, getProducts } = useContext(GeneralContext);
 
   const [category, setCategory] = useState<ICategory>({
     id: 0,
@@ -182,7 +182,7 @@ export default function FormProduct() {
             ))}
           </select>
         </div>
-        <button disabled={carregandoTema} type='submit'>
+        <button disabled={carregandoTema} type='submit' onClick={() => getProducts()}>
           {carregandoTema ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
         </button>
       </form>
