@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import Register from './pages/Register/Register';
-import Login from './pages/Login/Login';
+import Login from './pages/Login';
 import Product from './pages/Product/Product';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
 import PurchaseSuccess from './pages/ PurchaseSuccess';
 import Category from './pages/Categories/Category';
