@@ -1,5 +1,7 @@
 import { useContext } from 'react'
 import { UserContext } from '../context/UserContext'
+import '../components/FooterStyle.css'; 
+
 
 function Footer() {
 
@@ -14,13 +16,10 @@ function Footer() {
       <>
         <section>
           <div>
-            <p>Savi Our Food  Generation | Copyright: {data}</p>
-            <p>Acesse nossa organização no GitHub: </p>
-            <div>
-              <a href="https://github.com/Project-SaviOurFood" target='_blank'>
-              <img src="src/assets/github.png" alt="GitHub logo" width={50} height={50}/>
-              </a>
-            </div>
+            <p className='bg-gelo flex justify-center mt-16 pt-0.5'>Savi Our Food  Generation | Copyright: {data}</p>
+            <p className='bg-gelo flex justify-center mt-0 pb-0.5'>Acesse nossa organização no GitHub:  <a href="https://github.com/Project-SaviOurFood" target='_blank'>
+              <img src="src/assets/github.png" alt="GitHub logo" width={25} height={25}/>
+              </a> </p>
           </div>
         </section>
       </>
