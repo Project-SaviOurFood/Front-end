@@ -127,7 +127,8 @@ export default function FormProduct() {
 
   return (
 
- 
+    
+
 
       <div className="flex items-center justify-center bg-white rounded-md pt-1" id="principal">
 
