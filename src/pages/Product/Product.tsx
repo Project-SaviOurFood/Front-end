@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import NavBar from '../../components/NavBar';
+import NavBar from '../../components/navbar/NavBar';
 import SearchFilter from '../../components/searchfilter/SarchFilter'
 import { UserContext } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';

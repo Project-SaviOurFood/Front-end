@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { toastAlerta } from '../../utils/toastAlert';
-import { UserContext } from '../../context/UserContext'
-import IProduct from '../../interfaces/IProduct'
-import { get, deletar } from '../../service/Service';
+import { toastAlerta } from '../../../utils/toastAlert';
+import { UserContext } from '../../../context/UserContext'
+import IProduct from '../../../interfaces/IProduct'
+import { get, deletar } from '../../../service/Service';
+
+import './DeleterProduct.css'
 
 export default function DeletarProduct() {
   const [product, setProduct] = useState<IProduct>({} as IProduct);
@@ -61,21 +63,21 @@ export default function DeletarProduct() {
 
 
   return (
-    <div>
-      <h1>Deletar Produto</h1>
-      <p>Você tem certeza de que deseja apagar o Produto a seguir?</p>
+    <div className='flex flex-col justify-center items-center gap-5 bg-white rounded-md' id="container-deletar">
+      <h1 className='text-3xl font-bold'>Deletar Produto</h1>
+      <p className='text-2xl text-center'>Você tem certeza de que deseja apagar o <br/>Produto a seguir?</p>
       <div>
-        <header><b>Nome do Produto:</b>  {product.name}</header>
-        <div>
-            <img src={product.picture} alt="Imge Product" />
+        <header className='text-xl text-center'><b>Nome do Produto:</b> <br />  {product.name}</header>
+        <div className='flex justify-center p-10'>
+            <img src={product.picture} alt="Imge Product" id="img-delete"/>
         </div>
-        <div>
-          <p><b>Data de Validade:</b>  {product.expirationDate}</p>
-          <p><b>Valor:</b> {product.value}</p>
+        <div className='text-center'>
+          <p className='text-xl'><b>Data de Validade:</b>  {product.expirationDate}</p>
+          <p className='text-xl'><b>Valor:</b> R${product.value}</p>
         </div>
-        <div>
-          <button onClick={() => navigate('/products')}>Não</button>
-          <button onClick={deletarPostagem}>
+        <div className='flex justify-around p-4'>
+          <button className='bg-red-600 rounded-md font-bold px-5 py-2 hover:underline' onClick={() => navigate('/products')}>Não</button>
+          <button className='bg-green-500 rounded-md font-bold px-5 hover:underline' onClick={deletarPostagem}>
             Sim
           </button>
         </div>

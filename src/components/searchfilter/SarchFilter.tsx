@@ -13,7 +13,7 @@ const filterSearch = (search: string) => {
 
   return (
     <>
-        <header className="flex bg-amarelo p-3">
+        <header className="flex items-center px-6 h-1">
             <ul className="flex ">
                     <li onClick={() => setFilterProducts(productResponse)} id="todos" className="text-vermelho cursor-pointer font-extrabold">TODOS</li>
                     <div className="flex gap-10">    

@@ -4,7 +4,7 @@ import CartCard from "../../components/CartCard";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import instituicoes from "../../utils/instituicoes";
-import NavBar from "../../components/NavBar";
+import NavBar from "../../components/navbar/NavBar";
 
 export default function Cart() {
     

@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react"
 import { GeneralContext } from "../context/GeneralContext";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/navbar/NavBar";
 
 export default function PurchaseSuccess() {
     const {cart, total, ong, setCart, setTotal} = useContext(GeneralContext);

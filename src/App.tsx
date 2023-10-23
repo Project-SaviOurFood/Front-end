@@ -9,8 +9,8 @@ import PurchaseSuccess from './pages/ PurchaseSuccess';
 import Category from './pages/Categories/Category';
 import FormCategory from './pages/Categories/FormCategory';
 import DeleteCategory from './pages/Categories/DeleteCategory';
-import FormProduct from './pages/Product/FormProduct';
-import DeletarProduct from './pages/Product/DeleterProduct';
+import FormProduct from './pages/Product/formproduct/FormProduct';
+import DeletarProduct from './pages/Product/deleteproduct/DeleterProduct';
 
 
 

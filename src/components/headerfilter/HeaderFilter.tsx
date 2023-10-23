@@ -8,8 +8,10 @@ const [search, setSearch] = useState<string>("");
 
     return (
         <>
-            <nav className='w-full'>
-                <ul className='flex justify-between mx-10 items-center'>
+        
+
+        <nav className='flex'>
+                <ul className=''>
                     <section>
                         <li>
                             <Link to="/products"><img src="src/assets/saviourfood.png" alt='logo' width={75} height={150} /></Link>
@@ -19,7 +21,7 @@ const [search, setSearch] = useState<string>("");
                         <li>
                             <label htmlFor="search">
                             <input
-                            className='bg-vermelho  w-3/4 py-2.5 px-5 border-none outline-none' 
+                            className='bg-vermelho border-none outline-none' 
                             type="text" 
                             name="search" 
                             id="search"
@@ -36,7 +38,7 @@ const [search, setSearch] = useState<string>("");
                     </section>
                 </ul>
             </nav>
-
+           
         </>
     )
 }
