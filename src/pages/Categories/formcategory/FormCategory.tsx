@@ -1,9 +1,13 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { put, get, register } from '../../service/Service';
-import { toastAlerta } from '../../utils/toastAlert';
-import { UserContext } from '../../context/UserContext';
-import ICategory from '../../interfaces/ICategory';
+import { put, get, register } from '../../../service/Service';
+import { toastAlerta } from '../../../utils/toastAlert';
+import { UserContext } from '../../../context/UserContext';
+import ICategory from '../../../interfaces/ICategory';
+
+import Legumes from '../../../assets/legumes.png'
+
+import './FormCategory.css'
 
 export default function FormCategory() {
   const [category, setCategory] = useState<ICategory>({} as ICategory);
@@ -12,7 +16,7 @@ export default function FormCategory() {
 
   const { id } = useParams<{ id: string }>();
 
-  const { userResponse: {token}, handleLogout } = useContext(UserContext);
+  const { userResponse: { token }, handleLogout } = useContext(UserContext);
 
   async function findById(id: string) {
     await get(`/category/${id}`, setCategory, {
@@ -92,21 +96,30 @@ export default function FormCategory() {
   }, [token]);
 
   return (
-    <div>
-      <h1>
-        {id === undefined ? 'Cadastre uma nova Categoria' : 'Editar Categoria'}
-      </h1>
-      <form onSubmit={newCategory}>
+    <div id="container-category" className='flex justify-center items-center bg-white rounded-md p-1'>
+
+      <div>
+        <img id="img-legumes" src={Legumes} alt="legumixx" />
+      </div>
+
+      <form onSubmit={newCategory} className='flex flex-col p-2 gap-10 items-center justify-center text-xl'>
+
+      <h1 className='font-bold text-4xl'>
+          {id === undefined ? 'Cadastre uma nova Categoria' : 'Editar Categoria'}
+        </h1>
+
         <div>
-          <label htmlFor="type">Tipo:</label>
+          <label htmlFor="type">Tipo</label>
           <input
-              type="text"
-              placeholder="Tipo"
-              name='type'
-              value={category.type}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)} />
-          <label htmlFor="descricao">Descrição da Categoria:</label>
+          className='w-full pl-2'
+            type="text"
+            placeholder="Tipo"
+            name='type'
+            value={category.type}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)} />
+          <label htmlFor="descricao">Descrição da Categoria</label>
           <input
+            className='w-full pl-2'
             type="text"
             placeholder="Descrição"
             name='description'
@@ -115,6 +128,7 @@ export default function FormCategory() {
           />
         </div>
         <button
+          className='bg-vermelho rounded-md p-2 font-semibold text-lg w-full hover:underline'
           type="submit"
         >
           {id === undefined ? 'Cadastrar' : 'Editar'}

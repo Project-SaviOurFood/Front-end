@@ -1,6 +1,10 @@
 #container-card{
 
-    height:25rem;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    height:28rem;
+    
 
 
 }
@@ -33,4 +37,17 @@
 
     opacity:0.5;
 
+}
+
+#title-product{
+
+    width:320px;
+    height: 72px;
+}
+
+#image{
+
+    object-fit:contain;
+    max-width:170;
+    max-height:190;
 }

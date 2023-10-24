@@ -4,8 +4,6 @@ import CartCard from "../../components/CartCard";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import instituicoes from "../../utils/instituicoes";
-import NavBar from "../../components/NavBar";
-import "../Cart/CartStyle.css";
 
 export default function Cart() {
   const { cart, total, setOng, ong } = useContext(GeneralContext);
@@ -73,16 +71,3 @@ export default function Cart() {
   );
 }
 
-// botao
-// margin-right: 7rem;
-// margin-top: -12rem;
-
-// ajude a instituicao
-// font-weight: bold;
-// margin-top: -3rem;
-// display: flex;
-// margin-right: 24px;
-// justify-content: center;
-
-// h2
-// margin-right: 8rem;

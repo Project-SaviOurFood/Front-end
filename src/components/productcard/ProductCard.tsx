@@ -38,13 +38,14 @@ export default function ProductCard({
     }
 
     return (
-        <div id="container-card" className="w-80 flex-col text-center content-start mt-11">
+        <div id="container-card" className="w-80 flex-col text-center content-start">
             <section className="">
-                <h2 className="font-bold p-3">{name}</h2>
+                <h2 id="title-product" className="font-bold p-3">{name}</h2>
             </section>
             <section>
                 <label htmlFor="image" >
                     <input
+                        className="border-none m" 
                         id="image"
                         type="image"
                         name="image"
@@ -78,9 +79,9 @@ export default function ProductCard({
                 <button id="mais" type="button" onClick={() => setQuantity(quantity + 1)}><img src={Mais} alt="Sinal de mais" /></button>
                 <button id="carrinho" type="button" onClick={() => addCart({ id, name, picture, value, quantity })} ><img src={Cart} alt="carrinho" /></button>
             </section>
-            <section>
-                <button type="button" onClick={() => navigate(`/editProduct/${id}`)} >Editar</button>
-                <button type="button" onClick={() => navigate(`/deleteProduct/${id}`)} >Deletar</button>
+            <section className="flex justify-around font-bold mt-4">
+                <button className="hover:underline opacity-80" type="button" onClick={() => navigate(`/editProduct/${id}`)} >Editar</button>
+                <button className="hover:underline opacity-80" type="button" onClick={() => navigate(`/deleteProduct/${id}`)} >Deletar</button>
             </section>
         </div>
     );
