@@ -1,9 +1,9 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ILogin from "../interfaces/ILogin";
-import { UserContext } from "../context/UserContext";
+import ILogin from "../../interfaces/ILogin";
+import { UserContext } from "../../context/UserContext.";
 import { RotatingLines } from "react-loader-spinner";
-import '../pages/Login/Style.css'; 
+import '../../pages/Login/Style.css';
 
 
 export default function Login() {
@@ -26,7 +26,7 @@ export default function Login() {
 
     useEffect(() => {
         if (userResponse.token != '') {
-            navigate('/products')
+            navigate('/home')
         }
     }, [userResponse]);
 
@@ -38,12 +38,11 @@ export default function Login() {
 
     return (
         <div  >
-            <form onSubmit={userLogin} id="container" className=" bg-white rounded-lg mt-8 bg-no-repeat">
+            <form onSubmit={userLogin} className="flex flex-col gap-4">
                 <section className="partemail">
-                    <label htmlFor="user" className="text-xl flex justify-center">
+                    <label htmlFor="user" className="text-2xl">
                         Email
                         <input
-                            className="pr-2 pl-2"
                             id="user"
                             type="email"
                             name="email"
@@ -54,7 +53,7 @@ export default function Login() {
                   
                 </section>
                 <section>
-                    <label htmlFor="password" className="text-xl flex justify-center">
+                    <label htmlFor="password">
                         Senha
                         <input
                             id="password"
@@ -66,11 +65,10 @@ export default function Login() {
                     </label>
                 </section>
                 <section>
-                    <p className="text-sm flex justify-center">Não possui conta? </p>
-                    <p className="text-sm flex justify-center"><Link to='/register'>Cadastre-se</Link ></p>
+                    <p>Não possui conta? <Link to='/register'>Cadastre-se</Link></p>
                 </section>
-                <section className="text-xl h-12 flex justify-center">
-                    <button type="submit" id="buttonLogin">
+                <section>
+                    <button type="submit">
                         {isLoading ? <RotatingLines
                             strokeColor="white"
                             strokeWidth="5"
@@ -78,11 +76,12 @@ export default function Login() {
                             width="24"
                             visible={true}
                         /> :
-                            <span id="buttonLogin">Entrar</span>}
+                            <span>Entrar</span>}
                     </button>
                 </section>
             </form>
-            <div> <img src="src/assets/imgman.png" alt="" className="imglogin" /></div>
+            <div> <img src="\src\assets\imgman.png" alt="" className="imglogin" /> </div>
+          
         </div>
     
     );
