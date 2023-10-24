@@ -2,7 +2,7 @@ import ReactModal from 'react-modal';
 import { Link } from "react-router-dom"
 import "./Category.css"
 import { useContext } from 'react';
-import DeleteCategory from '../../pages/Categories/DeleteCategory';
+import DeleteCategory from '../../pages/Categories/deletecategory/DeleteCategory';
 import { GeneralContext } from '../../context/GeneralContext';
 
 type ICategoryInfo = {
@@ -26,7 +26,7 @@ return (
   <div className="mx-4 my-2 shadow-md w-11/12 min">
     <ReactModal isOpen={isOPen}
     style={{overlay: {
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
     },
       content: {
       top: '50%',
