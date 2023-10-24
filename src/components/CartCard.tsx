@@ -70,13 +70,17 @@ export default function CartCard({
           +
         </button>
         <p className="mx-4">{qtd}</p>
-        <button
-          type="button"
-          onClick={() => setQtd(qtd - 1)}
-          className="botaoMenos"
-        >
-          -
-        </button>
+        {qtd == 0 ?
+                    ""
+                    :
+                    <button
+                    type="button"
+                    onClick={() => setQtd(qtd - 1)}
+                    className="botaoMenos"
+                  >
+                    -
+                  </button>
+                    }
       </section>
 
       <section className="my-12 flex items-center justify-center bg-vermelho">

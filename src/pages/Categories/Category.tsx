@@ -4,8 +4,8 @@ import NavBar from "../../components/navbar/NavBar";
 import CardCategory from "../../components/category/CardCategory";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import FormCategory from "./FormCategory";
-import "../../components/category/category.css";
+import FormCategory from "./formcategory/FormCategory";
+import "../../components/category/Category.css";
 
 export default function Category() {
   const { categoryResponse, getCategories } = useContext(GeneralContext);
@@ -27,7 +27,7 @@ export default function Category() {
 
   return (
     <>
-      <NavBar buttonCategory={true} />
+      <NavBar renderSearch={true} />
       <div className="max ml-2 flex ">
         <section className="sidebar mx-4">
           <FormCategory />
