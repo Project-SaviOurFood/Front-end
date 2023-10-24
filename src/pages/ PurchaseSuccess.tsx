@@ -2,10 +2,10 @@ import { useContext, useEffect } from "react"
 import { GeneralContext } from "../context/GeneralContext";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import NavBar from "../components/HeaderHome";
+import NavBar from "../components/navbar/NavBar";
 
 export default function PurchaseSuccess() {
-    const {cart, total, ong} = useContext(GeneralContext);
+    const {cart, total, ong, setCart, setTotal} = useContext(GeneralContext);
     const {userResponse: {token}, handleLogout} = useContext(UserContext);
     const navigate = useNavigate();
 
@@ -38,8 +38,16 @@ export default function PurchaseSuccess() {
                 <h3>Valor destinado a Doação: R${(total*0.1).toFixed(2)}</h3>
             </section>
             <section>
-                <button type="button" onClick={() => navigate('/products')}>Voltar</button>
-                <button type="button" onClick={() => handleLogout}>Sair</button>
+                <button type="button" onClick={() => {
+                    setCart([]);
+                    setTotal(0);
+                    navigate('/products');
+                    }}>Voltar</button>
+                <button type="button" onClick={() => {
+                    setCart([])
+                    setTotal(0);
+                    handleLogout()
+                    }}>Sair</button>
             </section>
         </div>
     )

@@ -39,6 +39,7 @@ function NavBar({ buttonCategory = false }: IButtonCategory) {
                     </section>
                     <button type='button' onClick={() => navigate('/categories')}>Categorias</button>
                     <button type='button' onClick={() => navigate('/products')}>Produtos</button>
+                    <button type='button' onClick={() => navigate('/registerProduct')} >Cadastrar Produto</button>
                     <section>
                         <li>
                             <Link to="/cart"><img src="src/assets/carrinhos.png" alt='carrinho' width={100} height={100} /></Link>
@@ -46,7 +47,7 @@ function NavBar({ buttonCategory = false }: IButtonCategory) {
                     </section>
                 </ul>
             </nav>
-
+                        
         </>
     )
 }
