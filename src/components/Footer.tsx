@@ -15,9 +15,9 @@ function Footer() {
     footerComponent = (
       <>
         <section>
-          <div>
-            <p className='bg-amarelo flex justify-center mt-16 pt-0.5'>Savi Our Food  Generation | Copyright: {data}</p>
-            <p className='bg-amarelo flex justify-center mt-0 pb-0.5'>Acesse nossa organização no GitHub:  <a href="https://github.com/Project-SaviOurFood" target='_blank'>
+          <div className=''>
+            <p className=' flex justify-center mt-16 pt-0.5'>Savi Our Food  Generation | Copyright: {data}</p>
+            <p className=' flex justify-center mt-0 pb-0.5'>Acesse nossa organização no GitHub:  <a href="https://github.com/Project-SaviOurFood" target='_blank'>
               <img src="src/assets/github.png" alt="GitHub logo" width={25} height={25}/>
               </a> </p>
           </div>
