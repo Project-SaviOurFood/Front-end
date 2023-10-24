@@ -4,6 +4,7 @@ import CartCard from "../../components/CartCard";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import instituicoes from "../../utils/instituicoes";
+import NavBar from "../../components/NavBar";
 
 export default function Cart() {
   const { cart, total, setOng, ong } = useContext(GeneralContext);
@@ -21,7 +22,7 @@ export default function Cart() {
 
   return (
     <div className="flex justify-center align-center h-full flex-col w-4/5">
-      <NavBar />
+      <NavBar/>
       <section className="flex flex-col items-center p-8 w-4/5 text-center rounded-md shadow-md bg-white mx-80">
         <h1>Carrinho</h1>
         {cart.map(({ id, name, picture, value, quantity }) => (

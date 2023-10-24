@@ -1,37 +1,13 @@
 .imglogin{
     background-image: url(../../assets/imgman.png);
-    height: 640px;
-    margin-top: -40rem;
-    margin-left: 10rem;
+    height: 39rem;
+    margin-top: -333px;
+    margin-left: -475px;
     border-radius: 10px 0px 0px 10px;
 }
 
-body{
-    background-color: #FFF480
-}
 
-#container{
-    width: 48rem;
-    height: 40rem;
-    display: flex;
-    margin-left: 38rem;
-}
-
-#buttonLogin {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.1em 0.7em;
-    font-size: 23px;
-    font-weight: 400;
-    font-family: inherit;
-    background-color: #FF5757;
-    color: #FFF480;
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
-  
-
-input{
+.input{
     position: relative;
     padding: 10px;
     outline: none;
@@ -39,15 +15,37 @@ input{
     background: transparent;
     border-bottom: 1px solid #000000;
     color: #BEBEBE;
-    width: 17rem;
 }
-
 
 button{
     margin: 15px;
     display: inline;
     margin-top: 2px;
     margin-left: 11px;
+}
+
+#botaoEntrar{
+    border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.1em 0.7em;
+  font-size: 23px;
+  font-weight: 400;
+  font-family: inherit;
+  background-color: #FF5757;
+  color: #FFF480;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: -8px;
+  margin-left: 18rem;
+}
+
+#cont{
+    width: 47rem;
+    height: 39rem;
+    margin: -159px 144px 82px 624px;
 }
   
 
@@ -57,15 +55,15 @@ form{
     flex-direction: column;
     margin-top: 13rem;
 }
-  
+
 
 a {
     font-weight: 500;
     color: #7A7878;
     text-decoration: inherit;
-}
+  }
 
-a:hover {
+  a:hover {
     color: #FF5757;
-}
+  }
 
