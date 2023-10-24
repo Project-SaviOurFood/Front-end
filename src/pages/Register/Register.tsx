@@ -4,6 +4,7 @@ import { registerUser } from "../../service/Service";
 import { useNavigate } from "react-router-dom";
 import IUser from "../../interfaces/IUser";
 import '../Register/RegisterStyle.css'
+import { toastAlerta } from "../../utils/toastAlert";
 
 
 export default function Register() {
@@ -40,12 +41,12 @@ export default function Register() {
         if (name.length >= 5 && password.length >= 5) {
             try {
              await registerUser('/user/register', register, setRegisterResponse)
-                alert('Usuário Cadastrado com Sucesso');   
+                toastAlerta('Usuário Cadastrado com Sucesso', 'sucesso');   
             } catch (error) {
-                alert("Erro ao cadastrar o Usuário");
+                toastAlerta("Erro ao cadastrar o Usuário", 'info');
             }
         } else {
-            alert('Dados inconsistentes. Verifique as informações de cadastro.')
+            toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
             setRegister({...register, password: ''})
         }
     }
@@ -118,7 +119,7 @@ export default function Register() {
 
                 </section>
                 <section className="text-xl h-12 flex justify-center mt-3">
-                    <button onClick={() => navigate('/home')} id="buttonRegister">Cancelar</button>
+                    <button id="buttonCancel" onClick={() => navigate('/home')} >Cancelar</button>
                     <button type="submit" id="buttonRegister">Cadastrar</button>
                 </section>
                 </form>

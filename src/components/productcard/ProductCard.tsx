@@ -34,6 +34,7 @@ export default function ProductCard({
             ...cart,
             { id, name, picture, value, quantity }
         ])
+        console.log(cart)
     }
 
     return (
@@ -42,7 +43,7 @@ export default function ProductCard({
                 <h2 className="font-bold p-3">{name}</h2>
             </section>
             <section>
-                <label htmlFor="image">
+                <label htmlFor="image" >
                     <input
                         id="image"
                         type="image"
@@ -63,7 +64,16 @@ export default function ProductCard({
                 </p>
             </section>
             <section className="flex gap-7 items-center justify-center">
-                <button id="menos" type="button" onClick={() => setQuantity(quantity - 1)}><img src={Menos} alt="Sinal de menos" /></button>
+                {quantity == 0 ?
+                    ""
+                    :
+                    <button
+                        id="menos"
+                        type="button"
+                        onClick={() => setQuantity(quantity - 1)}>
+                        <img src={Menos} alt="Sinal de menos" />
+                    </button>
+                    }
                 <p className="font-bold text-cinza bg-gelo w-20 p-1 rounded-lg">{quantity}</p>
                 <button id="mais" type="button" onClick={() => setQuantity(quantity + 1)}><img src={Mais} alt="Sinal de mais" /></button>
                 <button id="carrinho" type="button" onClick={() => addCart({ id, name, picture, value, quantity })} ><img src={Cart} alt="carrinho" /></button>

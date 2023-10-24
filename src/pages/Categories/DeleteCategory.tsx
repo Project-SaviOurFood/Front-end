@@ -4,7 +4,6 @@ import { toastAlerta } from '../../utils/toastAlert';
 import { UserContext } from '../../context/UserContext';
 import ICategory from '../../interfaces/ICategory';
 import { deletar, get } from '../../service/Service';
-import { GeneralContext } from '../../context/GeneralContext';
 
 export default function DeleteCategory() {
     const [category, setCategory] = useState<ICategory>({} as ICategory)
@@ -14,7 +13,6 @@ export default function DeleteCategory() {
     const { id } = useParams<{ id: string }>()
 
     const {userResponse: {token} , handleLogout } = useContext(UserContext);
-    const {getCategories } = useContext(GeneralContext);
 
     async function findById(id: string) {
         try {
@@ -52,7 +50,7 @@ export default function DeleteCategory() {
                 }
             })
 
-            toastAlerta('Tema apagado com sucesso', 'sucesso')
+            toastAlerta('Category apagado com sucesso', 'sucesso')
 
         } catch (error) {
             toastAlerta('Erro ao apagar o Tema', 'erro')
@@ -65,14 +63,11 @@ export default function DeleteCategory() {
             <h1>Deletar tema</h1>
             <p >Você tem certeza de que deseja apagar Categoria a seguir?</p>
             <div>
-                <header>{category.type}</header>
-                <p>{category.description}</p>
+                <header><b>Categoria:</b> {category.type}</header>
+                <p><b>Descrição da Categoria</b> {category.description}</p>
                 <div className="flex">
                     <button onClick={() => navigate('/categories')}>Não</button>
-                    <button onClick={() => {
-                        deleteCategory();
-                        getCategories();
-                    }}>
+                    <button onClick={() => deleteCategory()}>
                         Sim
                     </button>
                 </div>

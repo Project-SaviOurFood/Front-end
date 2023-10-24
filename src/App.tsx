@@ -1,15 +1,16 @@
 import { Route, Routes } from 'react-router-dom';
 import Register from './pages/Register/Register';
-import Login from './pages/Login/Login';
+import Login from './pages/Login';
 import Product from './pages/Product/Product';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
 import PurchaseSuccess from './pages/ PurchaseSuccess';
 import Category from './pages/Categories/Category';
 import FormCategory from './pages/Categories/FormCategory';
 import DeleteCategory from './pages/Categories/DeleteCategory';
 import FormProduct from './pages/Product/FormProduct';
+import DeletarProduct from './pages/Product/DeleterProduct';
 
 
 
@@ -27,6 +28,7 @@ function App() {
     <Route path='/products' element={<Product/>} />
     <Route path='/registerProduct' element={<FormProduct/>} />
     <Route path='/editProduct/:id' element={<FormProduct/>} />
+    <Route path='/deleteProduct/:id' element={<DeletarProduct/>} />
     <Route path='/cart' element={<Cart/>} />
     <Route path='/finish' element={<PurchaseSuccess/>} />
     </Routes>

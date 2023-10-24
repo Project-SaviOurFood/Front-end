@@ -47,7 +47,7 @@ function NavBar({ buttonCategory = false }: IButtonCategory) {
                     </section>
                 </ul>
             </nav>
-
+                        
         </>
     )
 }

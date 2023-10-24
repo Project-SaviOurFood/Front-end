@@ -48,7 +48,7 @@ export default function FormCategory() {
           }
         })
 
-        toastAlerta('Tema atualizado com sucesso', 'sucesso')
+        toastAlerta('Category atualizada com sucesso', 'sucesso')
         navigate('/categories')
 
       } catch (error: any) {
@@ -56,7 +56,7 @@ export default function FormCategory() {
           toastAlerta('O token expirou, favor logar novamente', 'info')
           handleLogout()
         } else {
-          toastAlerta('Erro ao atualizar o Tema', 'erro')
+          toastAlerta('Erro ao atualizar a Category', 'erro')
         }
 
       }
@@ -69,14 +69,14 @@ export default function FormCategory() {
           }
         })
 
-        toastAlerta('Tema cadastrado com sucesso', 'sucesso')
+        toastAlerta('Category cadastrada com sucesso', 'sucesso')
 
       } catch (error: any) {
         if (error.toString().includes('403')) {
           toastAlerta('O token expirou, favor logar novamente', 'info')
           handleLogout()
         } else {
-          toastAlerta('Erro ao cadastrado o Tema', 'erro')
+          toastAlerta('Erro ao cadastrar a Category', 'erro')
         }
       }
     }
