@@ -1,29 +1,20 @@
-#container-product{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    gap:30px;
-    width: 100%;
-    margin:0 auto;
-    flex-wrap: wrap;
-    background-color: white;
-    padding:25px;
-    margin-top: 20px;
-
+#container-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 25px;
+  margin-top: 20px;
+}
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-
-
-<<<<<<< HEAD
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 35px;
 }
-
-::-webkit-scrollbar{
-    width: 10px;
-}
-
-::-webkit-scrollbar-thumb{
-    background-color: #ffffff;
-    border-radius: 35px;
-}
-=======
->>>>>>> 695ad8efb48e7882be23df65cbd39aa0826a9d47

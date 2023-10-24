@@ -4,7 +4,7 @@ import NavBar from "../../components/navbar/NavBar";
 import CardCategory from "../../components/category/CardCategory";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import FormCategory from "./FormCategory";
+import FormCategory from "./formcategory/FormCategory";
 import "../../components/category/category.css";
 
 export default function Category() {

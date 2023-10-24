@@ -1,23 +1,13 @@
-<<<<<<< HEAD:src/pages/Categories/FormCategory.tsx
-import { ChangeEvent, useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { put, get, register } from "../../service/Service";
-import { toastAlerta } from "../../utils/toastAlert";
-import { UserContext } from "../../context/UserContext";
-import ICategory from "../../interfaces/ICategory";
-import "../../components/category/Category.css"
-=======
-import { ChangeEvent, useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { put, get, register } from '../../../service/Service';
-import { toastAlerta } from '../../../utils/toastAlert';
-import { UserContext } from '../../../context/UserContext';
-import ICategory from '../../../interfaces/ICategory';
 
 import Legumes from '../../../assets/legumes.png'
 
 import './FormCategory.css'
->>>>>>> 695ad8efb48e7882be23df65cbd39aa0826a9d47:src/pages/Categories/formcategory/FormCategory.tsx
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { get, put, register } from '../../../service/Service';
+import { toastAlerta } from '../../../utils/toastAlert';
+import { UserContext } from '../../../context/UserContext';
+import ICategory from '../../../interfaces/ICategory';
 
 export default function FormCategory() {
   const [category, setCategory] = useState<ICategory>({} as ICategory);
@@ -26,14 +16,8 @@ export default function FormCategory() {
 
   const { id } = useParams<{ id: string }>();
 
-<<<<<<< HEAD:src/pages/Categories/FormCategory.tsx
-  const {
-    userResponse: { token },
-    handleLogout,
-  } = useContext(UserContext);
-=======
+
   const { userResponse: { token }, handleLogout } = useContext(UserContext);
->>>>>>> 695ad8efb48e7882be23df65cbd39aa0826a9d47:src/pages/Categories/formcategory/FormCategory.tsx
 
   async function findById(id: string) {
     await get(`/category/${id}`, setCategory, {
@@ -109,7 +93,6 @@ export default function FormCategory() {
   }, [token]);
 
   return (
-<<<<<<< HEAD:src/pages/Categories/FormCategory.tsx
     <div>
       <h1 className="flex justify-center font-bold text-lg">
         {id === undefined ? "Cadastre uma nova categoria" : "Editar Categoria"}
@@ -119,32 +102,6 @@ export default function FormCategory() {
           <label htmlFor="type">Categoria:</label>
           <input
           className="w-full"
-=======
-    <div id="container-category" className='flex justify-center items-center bg-white rounded-md p-1'>
-
-      <div>
-        <img id="img-legumes" src={Legumes} alt="legumixx" />
-      </div>
-
-      <form onSubmit={newCategory} className='flex flex-col p-2 gap-10 items-center justify-center text-xl'>
-
-      <h1 className='font-bold text-4xl'>
-          {id === undefined ? 'Cadastre uma nova Categoria' : 'Editar Categoria'}
-        </h1>
-
-        <div>
-          <label htmlFor="type">Tipo</label>
-          <input
-          className='w-full pl-2'
-            type="text"
-            placeholder="Tipo"
-            name='type'
-            value={category.type}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)} />
-          <label htmlFor="descricao">Descrição da Categoria</label>
-          <input
-            className='w-full pl-2'
->>>>>>> 695ad8efb48e7882be23df65cbd39aa0826a9d47:src/pages/Categories/formcategory/FormCategory.tsx
             type="text"
             placeholder="Ex: Grãos"
             name="type"
@@ -164,7 +121,6 @@ export default function FormCategory() {
           />
         </div>
         <button
-          className='bg-vermelho rounded-md p-2 font-semibold text-lg w-full hover:underline'
           type="submit"
           className="bg-vermelho p-2 rounded-lg mt-10 text-amarelo font-bold"
         >

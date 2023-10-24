@@ -1,9 +1,9 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ILogin from "../../interfaces/ILogin";
-import { UserContext } from "../../context/UserContext.";
+import ILogin from "../interfaces/ILogin";
+import { UserContext } from "../context/UserContext";
 import { RotatingLines } from "react-loader-spinner";
-import '../../pages/Login/Style.css';
+import '../pages/Login/Style.css';
 
 
 export default function Login() {
