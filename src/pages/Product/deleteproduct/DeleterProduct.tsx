@@ -14,7 +14,7 @@ export default function DeletarProduct() {
 
   const { id } = useParams<{ id: string }>()
 
-  const { userResponse: {token}, handleLogout } = useContext(UserContext);
+  const { userResponse: { token }, handleLogout } = useContext(UserContext);
 
   async function findById(id: string) {
     try {
@@ -63,25 +63,29 @@ export default function DeletarProduct() {
 
 
   return (
-    <div className='flex flex-col justify-center items-center gap-5 bg-white rounded-md' id="container-deletar">
-      <h1 className='text-3xl font-bold'>Deletar Produto</h1>
-      <p className='text-2xl text-center'>Você tem certeza de que deseja apagar o <br/>Produto a seguir?</p>
-      <div>
-        <header className='text-xl text-center'><b>Nome do Produto:</b> <br />  {product.name}</header>
-        <div className='flex justify-center p-10'>
-            <img src={product.picture} alt="Imge Product" id="img-delete"/>
-        </div>
-        <div className='text-center'>
-          <p className='text-xl'><b>Data de Validade:</b>  {product.expirationDate}</p>
-          <p className='text-xl'><b>Valor:</b> R${product.value}</p>
-        </div>
-        <div className='flex justify-around p-4'>
-          <button className='bg-red-600 rounded-md font-bold px-5 py-2 hover:underline' onClick={() => navigate('/products')}>Não</button>
-          <button className='bg-green-500 rounded-md font-bold px-5 hover:underline' onClick={deletarPostagem}>
-            Sim
-          </button>
+    <div>
+      <div className='flex flex-col justify-center items-center gap-5 bg-white rounded-md' id="container-deletar">
+        <h1 className='text-3xl font-bold'>Deletar Produto</h1>
+        <p className='text-2xl text-center'>Você tem certeza de que deseja apagar o <br />Produto a seguir?</p>
+        <div>
+          <header className='text-xl text-center'><b>Nome do Produto:</b> <br />  {product.name}</header>
+          <div className='flex justify-center p-10'>
+            <img src={product.picture} alt="Imge Product" id="img-delete" />
+          </div>
+          <div className='text-center'>
+            <p className='text-xl'><b>Data de Validade:</b>  {product.expirationDate}</p>
+            <p className='text-xl'><b>Valor:</b> R${product.value}</p>
+          </div>
+          <div className='flex justify-around p-4'>
+            <button className='bg-red-600 rounded-md font-bold px-5 py-2 hover:underline' onClick={() => navigate('/products')}>Não</button>
+            <button className='bg-green-500 rounded-md font-bold px-5 hover:underline' onClick={deletarPostagem}>
+              Sim
+            </button>
+          </div>
         </div>
       </div>
+
     </div>
+
   )
 }
