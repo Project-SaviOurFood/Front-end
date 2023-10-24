@@ -24,7 +24,7 @@ export default function Login() {
 
   useEffect(() => {
     if (userResponse.token != "") {
-      navigate("/product");
+      navigate("/products");
     }
   }, [userResponse]);
 

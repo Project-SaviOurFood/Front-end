@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { GeneralContext } from "../context/GeneralContext";
+import Mais from '../assets/+.png';
+import Menos from '../assets/-.png';
 import ".././pages/Cart/CartStyle.css";
 
 type ICartInfo = {
@@ -42,7 +44,7 @@ export default function CartCard({
   }, [cart.length, qtd]);
 
   return (
-    <div>
+    <div id="container-card" className="w-80 flex-col text-center content-start">
       <section>
         <label htmlFor="image" >
           <input
@@ -55,30 +57,30 @@ export default function CartCard({
             width={150}
             height={150}
           />
-        </label>
+        </label>       
       </section>
-      <h2>{name}</h2>
+      <h2 id="title-product" className="font-bold p-3">{name}</h2>
       <section>
-        <h4>R$ {value.toFixed(2)}</h4>
+        <h4 className="font-bold">R$ {value.toFixed(2)}</h4>
       </section>
-      <section className="flex justify-center ">
+      <section className="flex gap-7 items-center justify-center">
         <button
+          id="mais"
           type="button"
-          onClick={() => setQtd(qtd + 1)}
-          className="botaoMais"
-        >
-          +
+          onClick={() => setQtd(qtd + 1)}>
+          <img src={Mais} alt="Sinal de mais" />        
+          
         </button>
         <p className="mx-4">{qtd}</p>
         {qtd == 0 ?
                     ""
                     :
                     <button
+                    id="menos"
                     type="button"
-                    onClick={() => setQtd(qtd - 1)}
-                    className="botaoMenos"
-                  >
-                    -
+                    onClick={() => setQtd(qtd - 1)}>
+                    <img src={Menos} alt="Sinal de menos" />                  
+                    
                   </button>
                     }
       </section>
@@ -88,7 +90,7 @@ export default function CartCard({
           <button
             type="button"
             onClick={() => deleteProductCart(id)}
-            className="bg-vermelho w-36 p-2 rounded text-amarelo mx-auto" 
+            className=" mx-auto hover:underline opacity-80" 
             id="botaoFinalizar"
           >
             Excluir
