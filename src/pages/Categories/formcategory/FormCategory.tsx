@@ -97,8 +97,8 @@ export default function FormCategory() {
   }, [token]);
 
   return (
-    <div id="container-category" className='flex justify-center items-center bg-white rounded-md p-1'>
-      <form onSubmit={newCategory} className='flex flex-col p-2 gap-10 items-center justify-center text-xl'>
+    <div id="container-category" className='bg-white rounded-md p-1'>
+      <form onSubmit={newCategory} className='flex flex-col p-2 gap-10 items-center justify-center text-xl h-full'>
 
       <h1 className='font-bold text-4xl'>
           {id === undefined ? 'Cadastre uma nova Categoria' : 'Editar Categoria'}
@@ -106,7 +106,7 @@ export default function FormCategory() {
 
         <div>
           <label htmlFor="type">Tipo</label>
-          <input
+          <input  
           className='w-full pl-2'
             type="text"
             placeholder="Tipo"
