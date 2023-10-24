@@ -13,6 +13,10 @@ type IProductContext = {
   cart: ICart[],
   filterProducts: IProduct[],
   ong: string,
+  edit: boolean,
+  isOPen: boolean,
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
+  setEdit: React.Dispatch<React.SetStateAction<boolean>>,
   getCategories(): Promise<void>,
   getProducts(): Promise<void>,
   setOng: React.Dispatch<React.SetStateAction<string>>,
@@ -33,6 +37,8 @@ export function GeneralProvider({ children }: IChildren) {
   const [filterProducts, setFilterProducts] = useState<IProduct[]>([]);
   const [total, setTotal] = useState<number>(0);
   const [ong, setOng] = useState<string>("ActionAid");
+  const [edit, setEdit] = useState<boolean>(false);
+  const [isOPen, setIsOpen] = useState(false);
 
 
   const { userResponse: { token }, handleLogout } = useContext(UserContext);
@@ -81,6 +87,10 @@ export function GeneralProvider({ children }: IChildren) {
       filterProducts,
       total,
       ong,
+      edit,
+      isOPen,
+      setIsOpen,
+      setEdit,
       getCategories,
       getProducts,
       setOng,

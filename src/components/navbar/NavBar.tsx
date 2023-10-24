@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './NavBar.css'
 
-type IButtonCategory = {
-    buttonCategory?: boolean
+type IRenderSearch = {
+    renderSearch?: boolean
 }
 
 
-function NavBar({ buttonCategory = false }: IButtonCategory) {
+function NavBar({ renderSearch = false }: IRenderSearch) {
     const [search, setSearch] = useState<string>("");
     const navigate = useNavigate();
     return (
@@ -20,13 +20,8 @@ function NavBar({ buttonCategory = false }: IButtonCategory) {
                         </li>
                     </section>
                     <section>
-                        {buttonCategory ?
-                            <button
-                                className='bg-vermelho text-amarelo p-3 rounded-md font-bold hover:underline w-96'
-                                type='button'
-                                onClick={() => navigate('/registerCategory')}>
-                                Cadastrar Categoria
-                            </button>
+                        {renderSearch ?
+                            ""
                             : <li>
                                 <label htmlFor="search">
                                     <input

@@ -1,0 +1,21 @@
+.max {
+    width: 1417px;
+    background-color: white;
+}
+
+.min {
+    min-width: 910px;
+}
+
+.hmin {
+    height: 526px;
+    overflow-y: scroll;
+}
+
+.sidebar {
+    width: 450px;
+}
+
+.sidelabel {
+    margin-top: -60px;
+}
