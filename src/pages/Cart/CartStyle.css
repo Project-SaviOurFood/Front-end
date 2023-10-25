@@ -2,6 +2,46 @@
     margin-top: -3rem;
 }
 
+
+#container-card:hover{
+}
+
+
+#menos:hover,
+#mais:hover{
+
+    opacity:0.9;
+
+
+}
+
+#menos:active,
+#mais:active{
+
+    opacity:0.7;
+
+
+}
+
+#carrinho:active{
+
+    opacity:0.5;
+
+}
+
+#title-product{
+
+    width:320px;
+    height: 72px;
+}
+
+#image{
+
+    object-fit:contain;
+    max-width:170;
+    max-height:190;
+}
+
 .botao{
     margin-right: 4rem;
     margin-top: -22px;

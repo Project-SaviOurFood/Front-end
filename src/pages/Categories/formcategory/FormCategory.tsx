@@ -1,13 +1,11 @@
-
-import Legumes from '../../../assets/legumes.png'
-
-import './FormCategory.css'
-import { ChangeEvent, useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { get, put, register } from '../../../service/Service';
-import { toastAlerta } from '../../../utils/toastAlert';
-import { UserContext } from '../../../context/UserContext';
-import ICategory from '../../../interfaces/ICategory';
+import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { put, get, register } from "../../../service/Service";
+import { toastAlerta } from "../../../utils/toastAlert";
+import { UserContext } from "../../../context/UserContext";
+import ICategory from "../../../interfaces/ICategory";
+import { GeneralContext } from "../../../context/GeneralContext";
+import "./FormCategory.css";
 
 export default function FormCategory() {
   const [category, setCategory] = useState<ICategory>({} as ICategory);
@@ -16,8 +14,11 @@ export default function FormCategory() {
 
   const { id } = useParams<{ id: string }>();
 
-
-  const { userResponse: { token }, handleLogout } = useContext(UserContext);
+  const {
+    userResponse: { token },
+    handleLogout,
+  } = useContext(UserContext);
+  const { getCategories } = useContext(GeneralContext);
 
   async function findById(id: string) {
     await get(`/category/${id}`, setCategory, {
@@ -33,6 +34,10 @@ export default function FormCategory() {
     }
   }, [id]);
 
+  /*   useEffect(() => {
+    getCategories();
+  }, [])
+ */
   function updateState(e: ChangeEvent<HTMLInputElement>) {
     setCategory({
       ...category,
@@ -81,7 +86,8 @@ export default function FormCategory() {
         }
       }
     }
-
+    setCategory({ type: "", description: "" });
+    getCategories();
     navigate("/categories");
   }
 
@@ -93,37 +99,38 @@ export default function FormCategory() {
   }, [token]);
 
   return (
-    <div>
-      <h1 className="flex justify-center font-bold text-lg">
-        {id === undefined ? "Cadastre uma nova categoria" : "Editar Categoria"}
-      </h1>
-      <form onSubmit={newCategory}>
-        <div className="flex flex-col sidelabel">
-          <label htmlFor="type">Categoria:</label>
+    <div id="container-category" className="bg-white rounded-md p-1">
+      <form
+        onSubmit={newCategory}
+        className="flex flex-col p-2 gap-10 items-center justify-center text-xl h-full"
+      >
+        <h1 className="font-bold text-4xl">
+          {id === undefined
+            ? "Cadastre uma nova Categoria"
+            : "Editar Categoria"}
+        </h1>
+
+        <div>
+          <label htmlFor="type">Tipo</label>
           <input
-          className="w-full"
+            className="w-full pl-2"
             type="text"
-            placeholder="Ex: Grãos"
+            placeholder="Tipo"
             name="type"
             value={category.type}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
           />
-          <label htmlFor="descricao" className="mt-4">
-            Descrição da Categoria:
-          </label>
+          <label htmlFor="descricao">Descrição da Categoria</label>
           <input
-            className="w-full"
+            className="w-full pl-2"
             type="text"
-            placeholder="Ex: Grãos ricos em carboidratos..."
+            placeholder="Ex: Grãos"
             name="description"
             value={category.description}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
           />
         </div>
-        <button
-          type="submit"
-          className="bg-vermelho p-2 rounded-lg mt-10 text-amarelo font-bold"
-        >
+        <button type="submit">
           {id === undefined ? "Cadastrar" : "Editar"}
         </button>
       </form>

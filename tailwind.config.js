@@ -9,6 +9,7 @@ export default {
         'vermelho': '#FF5757',
         'marsala': '#D62D2D',
         'amarelo': '#FFF480',
+        'amareloClaro': '#fba72b',
         'marromEstranho': '#CEC24A',
         'cinza': '#918989',
         'gelo': '#F8F8F8'

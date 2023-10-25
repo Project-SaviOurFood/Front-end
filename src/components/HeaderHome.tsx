@@ -31,9 +31,9 @@ export default function HeaderHome() {
           <a href="#mission" className="font-normal">
             <h3>Missão</h3> 
           </a>
-        </section>
-        {token != "" ? (
-          <section>
+
+          {token != "" ? (
+          <section className="flex gap-10 text-vermelho">
             <button type="button" onClick={() => navigate("/products")}>
               Produtos
             </button>
@@ -44,6 +44,15 @@ export default function HeaderHome() {
         ) : (
           ""
         )}
+
+
+
+
+
+
+
+        </section>
+       
 
         <section className="flex gap-10">
           <button type="button" onClick={() => navigate("/login")} className="text-vermelho">
