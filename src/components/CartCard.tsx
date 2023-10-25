@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { GeneralContext } from "../context/GeneralContext";
-import Mais from '../assets/+.png';
-import Menos from '../assets/-.png';
+import Mais from "../assets/+.png";
+import Menos from "../assets/-.png";
 import ".././pages/Cart/CartStyle.css";
 
 type ICartInfo = {
@@ -44,53 +44,51 @@ export default function CartCard({
   }, [cart.length, qtd]);
 
   return (
-    <div id="container-card" className="w-80 flex-col text-center content-start">
-      <section>
-        <label htmlFor="image" >
-          <input
-          className="object-contain"
-            id="image"
-            type="image"
-            name="image"
-            src={picture}
-            alt="Image Product"
-            width={150}
-            height={150}
-          />
-        </label>       
-      </section>
-      <h2 id="title-product" className="font-bold p-3">{name}</h2>
-      <section>
-        <h4 className="font-bold">R$ {value.toFixed(2)}</h4>
-      </section>
-      <section className="flex gap-7 items-center justify-center">
-        <button
-          id="mais"
-          type="button"
-          onClick={() => setQtd(qtd + 1)}>
-          <img src={Mais} alt="Sinal de mais" />        
-          
+  <div className="my-4 hover:shadow-xl hover:rounded-md">
+      <div className="flex flex-col items-center text-center">
+        <section>
+          <label htmlFor="image" >
+            <input
+              className="object-contain mt-2"
+              id="image"
+              type="image"
+              name="image"
+              src={picture}
+              alt="Image Product"
+              width={150}
+              height={150}
+            />
+          </label>
+        </section>
+        <h2 className="font-bold p-3 w-3/5 text-xl">
+          {name}
+        </h2>
+        <section>
+          <h4 className="font-bold text-2xl mb-2">R$ {value.toFixed(2)}</h4>
+        </section>
+      </div>
+      <section className="flex gap-3 items-center justify-center mb-16">
+        <button id="mais" type="button" onClick={() => setQtd(qtd + 1)}>
+          <img src={Mais} alt="Sinal de mais" />
         </button>
-        <p className="mx-4">{qtd}</p>
-        {qtd == 0 ?
-                    ""
-                    :
-                    <button
-                    id="menos"
-                    type="button"
-                    onClick={() => setQtd(qtd - 1)}>
-                    <img src={Menos} alt="Sinal de menos" />                  
-                    
-                  </button>
-                    }
+        <p className="mx-4 text-xl font-semibold">{qtd}</p>
+        {qtd == 0 ? (
+          ""
+        ) : (
+          <button id="menos" type="button" onClick={() => setQtd(qtd - 1)}>
+            <img src={Menos} alt="Sinal de menos" />
+          </button>
+        )}
       </section>
 
-      <section className="my-12 flex items-center justify-center bg-vermelho">
+
+      <section className="my-12 flex items-center justify-center bg-vermelho font-bold mt-9">
      
           <button
+          className="hover:underline opacity-80"
             type="button"
             onClick={() => deleteProductCart(id)}
-            className=" mx-auto hover:underline opacity-80" 
+            
             id="botaoFinalizar"
           >
             Excluir

@@ -6,7 +6,7 @@ import Product from './pages/Product/Product';
 import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
-import PurchaseSuccess from './pages/ PurchaseSuccess';
+import PurchaseSuccess from './pages/Purchase/ PurchaseSuccess';
 import Category from './pages/Categories/Category';
 import FormCategory from './pages/Categories/formcategory/FormCategory';
 import FormProduct from './pages/Product/formproduct/FormProduct';
@@ -16,6 +16,7 @@ import DeletarProduct from './pages/Product/deleteproduct/DeleterProduct';
 function App() {
   return (
     <>
+    <div className='flex flex-col min-h-screen'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -32,6 +33,7 @@ function App() {
         <Route path="/finish" element={<PurchaseSuccess />} />
       </Routes>
       <Footer />
+      </div>
     </>
   );
 }

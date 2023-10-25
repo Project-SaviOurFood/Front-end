@@ -21,54 +21,39 @@ export default function Cart() {
   }, [token]);
 
   return (
-    <div className="flex justify-center align-center h-full flex-col w-4/5">
-      <NavBar/>
-      <section className="flex flex-col items-center p-8 w-4/5 text-center rounded-md shadow-md bg-white mx-80">
-        <h1>Carrinho</h1>
-        {cart.map(({ id, name, picture, value, quantity }) => (
-          <CartCard productInfo={{ id, name, picture, value, quantity }} />
-        ))}
-        <section>
-          <section>
-            <section className="-mr-9">
-              <h2 className="font-bold flex justify-center" id="options">
-                Escolha a instituição que deseja Ajudar!!!
-              </h2>
-              <select
-                className="text-vermelho mt-12 "
-                name="select"
-                value={ong}
-                id="select"
-                onChange={({ target: { value } }) => setOng(value)}
-              >
-                {instituicoes.map((ong) => (
-                  <option value={ong}>{ong}</option>
-                ))}
-              </select>
-            </section>
-
-            <div className="total">
-              <section className="flex flex-col mt-12 mr-2" id="h22">
-                <p className="mr-48">Total: R${total.toFixed(2)}</p>
-              </section>
-            </div>
-
-            <div className="botao">
-              <section className="flex flex-col justify-center items-end">
-                <button
-                  disabled={cart.length == 0}
-                  onClick={() => navigate("/finish")}
-                  className="bg-vermelho w-36 p-2 rounded text-amarelo"
-                  id="botaoFinalizar"
-                >
-                  Finalizar Compra
-                </button>
-              </section>
-            </div>
+    <div className="">
+      <NavBar />
+      <h1 className="flex justify-center text-3xl font-bold">Carrinho</h1>
+      <div className="flex justify-center mt-4">
+        <div className="flex flex-col items-center bg-white w-2/5 rounded-md">
+          {cart.map(({ id, name, picture, value, quantity }) => (
+            <CartCard productInfo={{ id, name, picture, value, quantity }} />
+          ))}
+          <h2 className="mt-4 text-xl font-semibold">Escolha a instituição que deseja ajudar!!!</h2>
+          <p className="text-2xl font-bold">Total: R${total.toFixed(2)}</p>
+          <select
+            className="my-4 mb-6 font-semibold text-xl px-0 bg-gray-200 rounded-md"
+            name="select"
+            value={ong}
+            id="select"
+            onChange={({ target: { value } }) => setOng(value)}
+          >
+            {instituicoes.map((ong) => (
+              <option value={ong}>{ong}</option>
+            ))}
+          </select>
+          <section className="mb-4">
+            <button
+              disabled={cart.length == 0}
+              onClick={() => navigate("/finish")}
+              className="bg-vermelho w-36 p-2 rounded text-amarelo"
+              id="botaoFinalizar"
+            >
+              Finalizar Compra
+            </button>
           </section>
-        </section>
-      </section>
+        </div>
+      </div>
     </div>
   );
 }
-

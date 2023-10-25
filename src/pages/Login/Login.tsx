@@ -40,7 +40,7 @@ export default function Login() {
           <label htmlFor="user" className="text-xl ">
             Email
             <input
-            className="pr-2 pl-2"
+              className="pr-2 pl-2"
               id="user"
               type="email"
               name="email"
@@ -53,7 +53,7 @@ export default function Login() {
           <label htmlFor="password" className="text-xl mt-56 ml-40 w-80">
             Senha
             <input
-            className="pr-2 pl-2"
+              className="pr-2 pl-2"
               id="password"
               type="password"
               name="password"
@@ -62,7 +62,7 @@ export default function Login() {
             />
           </label>
         </section>
-        
+
         <section className="ml-48">
           <p className="text-xl ">
             Não possui conta? <Link to="/register">Cadastre-se</Link>
@@ -70,8 +70,8 @@ export default function Login() {
         </section>
 
         <section className="">
-          <button type="submit"  className=""
-                id="">
+          <button type="submit"
+                id="botaoCarregar">
             {isLoading ? (
               <RotatingLines
                 strokeColor="white"
@@ -81,10 +81,7 @@ export default function Login() {
                 visible={true}
               />
             ) : (
-              <span
-                className="fixed"
-                id="botaoEntrar"
-              >
+              <span className="fixed" id="botaoEntrar">
                 Entrar
               </span>
             )}

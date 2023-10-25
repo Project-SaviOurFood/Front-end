@@ -1,12 +1,11 @@
-import { ChangeEvent, useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { put, get, register } from '../../../service/Service';
-import { toastAlerta } from '../../../utils/toastAlert';
-import { UserContext } from '../../../context/UserContext';
-import ICategory from '../../../interfaces/ICategory';
-import { GeneralContext } from '../../../context/GeneralContext';
-import './FormCategory.css'
-
+import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { put, get, register } from "../../../service/Service";
+import { toastAlerta } from "../../../utils/toastAlert";
+import { UserContext } from "../../../context/UserContext";
+import ICategory from "../../../interfaces/ICategory";
+import { GeneralContext } from "../../../context/GeneralContext";
+import "./FormCategory.css";
 
 export default function FormCategory() {
   const [category, setCategory] = useState<ICategory>({} as ICategory);
@@ -15,7 +14,10 @@ export default function FormCategory() {
 
   const { id } = useParams<{ id: string }>();
 
-  const { userResponse: { token }, handleLogout } = useContext(UserContext);
+  const {
+    userResponse: { token },
+    handleLogout,
+  } = useContext(UserContext);
   const { getCategories } = useContext(GeneralContext);
 
   async function findById(id: string) {
@@ -32,7 +34,7 @@ export default function FormCategory() {
     }
   }, [id]);
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     getCategories();
   }, [])
  */
@@ -84,7 +86,7 @@ export default function FormCategory() {
         }
       }
     }
-    setCategory({type: '', description: ''});
+    setCategory({ type: "", description: "" });
     getCategories();
     navigate("/categories");
   }
@@ -97,25 +99,30 @@ export default function FormCategory() {
   }, [token]);
 
   return (
-    <div id="container-category" className='bg-white rounded-md p-1'>
-      <form onSubmit={newCategory} className='flex flex-col p-2 gap-10 items-center justify-center text-xl h-full'>
-
-      <h1 className='font-bold text-4xl'>
-          {id === undefined ? 'Cadastre uma nova Categoria' : 'Editar Categoria'}
+    <div id="container-category" className="bg-white rounded-md p-1">
+      <form
+        onSubmit={newCategory}
+        className="flex flex-col p-2 gap-10 items-center justify-center text-xl h-full"
+      >
+        <h1 className="font-bold text-4xl">
+          {id === undefined
+            ? "Cadastre uma nova Categoria"
+            : "Editar Categoria"}
         </h1>
 
         <div>
           <label htmlFor="type">Tipo</label>
-          <input  
-          className='w-full pl-2'
+          <input
+            className="w-full pl-2"
             type="text"
             placeholder="Tipo"
-            name='type'
+            name="type"
             value={category.type}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)} />
+            onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
+          />
           <label htmlFor="descricao">Descrição da Categoria</label>
           <input
-            className='w-full pl-2'
+            className="w-full pl-2"
             type="text"
             placeholder="Ex: Grãos"
             name="description"
@@ -123,10 +130,7 @@ export default function FormCategory() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
           />
         </div>
-        <button
-          className='bg-vermelho rounded-md p-2 font-semibold text-lg w-full hover:underline'
-          type="submit"
-        >
+        <button type="submit">
           {id === undefined ? "Cadastrar" : "Editar"}
         </button>
       </form>
