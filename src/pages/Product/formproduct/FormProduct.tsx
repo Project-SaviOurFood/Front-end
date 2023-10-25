@@ -7,7 +7,6 @@ import { GeneralContext } from '../../../context/GeneralContext';
 import { get, post, put } from '../../../service/Service';
 import IProduct from '../../../interfaces/IProduct';
 import Legumes from '../../../assets/legumes.png'
-
 import './FormProduct.css'
 
 
@@ -93,6 +92,7 @@ export default function FormProduct() {
           },
         });
         toastAlerta('Produto atualizado com sucesso', 'sucesso');
+        await getCategories();
         navigate('/products');
       } catch (error: any) {
         if (error.toString().includes('403')) {
@@ -109,7 +109,6 @@ export default function FormProduct() {
             Authorization: userResponse.token,
           },
         });
-
         toastAlerta('Produto cadastrado com sucesso', 'sucesso');
         navigate('/products')
       } catch (error: any) {
@@ -121,15 +120,12 @@ export default function FormProduct() {
         }
       }
     }
+   getProducts(); 
   }
 
   const carregandoTema = category.description === '';
 
   return (
-
-    
-
-
       <div className="flex items-center justify-center bg-white rounded-md pt-1" id="principal">
 
         <div>
@@ -199,7 +195,7 @@ export default function FormProduct() {
               ))}
             </select>
           </div>
-          <button className="bg-vermelho rounded-md p-3 font-semibold" disabled={carregandoTema} type='submit' onClick={() => getProducts()}>
+          <button className="bg-vermelho rounded-md p-3 font-semibold" disabled={carregandoTema} type='submit'>
             {carregandoTema ? <span>Carregando...</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
           </button>
         </form>
