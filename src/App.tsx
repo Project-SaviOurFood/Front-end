@@ -6,7 +6,7 @@ import Product from './pages/Product/Product';
 import Footer from './components/Footer';
 import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
-import PurchaseSuccess from './pages/ PurchaseSuccess';
+import PurchaseSuccess from './pages/Purchase/ PurchaseSuccess';
 import Category from './pages/Categories/Category';
 import FormCategory from './pages/Categories/formcategory/FormCategory';
 import FormProduct from './pages/Product/formproduct/FormProduct';

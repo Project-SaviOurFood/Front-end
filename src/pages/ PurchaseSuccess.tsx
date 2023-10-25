@@ -31,7 +31,7 @@ export default function PurchaseSuccess() {
                         <p>Valor Unitário: R${value} </p>
                     </div>
                 ))}
-                <span> Total: R${total}</span>
+                <span> Total: R${total.toFixed(2)}</span>
             </section>
             <section>
                 <h2>Instituição de Destino: {ong}</h2>

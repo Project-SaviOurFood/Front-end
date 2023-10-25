@@ -14,10 +14,8 @@ type IUserContext = {
 
 export const UserContext = createContext({} as IUserContext);
 
-
 export function UserProvider({ children }: IChildren) {
-  const [isLoading, setIsLoading] = useState(false)
-
+  const [isLoading, setIsLoading] = useState(false);
   const [userResponse, setUserResponse] = useState({
     id: 0,
     name: '',
@@ -27,11 +25,12 @@ export function UserProvider({ children }: IChildren) {
     token: ''
   });
 
+  
   async function handleLogin(userLogin: ILogin) {
     setIsLoading(true)
     try {
       await loginUser(`/user/login`, userLogin, setUserResponse)
-      alert("Usuário logado com sucesso")
+      alert("Usuário logado com sucesso");
       setIsLoading(false)
     } catch (error) {
       console.log(error)
@@ -52,7 +51,12 @@ export function UserProvider({ children }: IChildren) {
   }
 
   return (
-    <UserContext.Provider value={{isLoading, userResponse, setUserResponse, handleLogin, handleLogout }}>
+    <UserContext.Provider value={{
+      isLoading, 
+      userResponse, 
+      setUserResponse, 
+      handleLogin, 
+      handleLogout }}>
       {children}
     </UserContext.Provider>
   );

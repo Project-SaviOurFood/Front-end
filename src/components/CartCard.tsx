@@ -81,15 +81,19 @@ export default function CartCard({
         )}
       </section>
 
-      <section className="mt-12 flex items-center justify-center bg-vermelho mb-4 ">
-        <button
-          type="button"
-          onClick={() => deleteProductCart(id)}
-          className="hover:underline bg-vermelho text-amarelo py-2 px-4 rounded-md"
-          id="botaoFinalizar"
-        >
-          Excluir
-        </button>
+
+      <section className="my-12 flex items-center justify-center bg-vermelho font-bold mt-9">
+     
+          <button
+          className="hover:underline opacity-80"
+            type="button"
+            onClick={() => deleteProductCart(id)}
+            
+            id="botaoFinalizar"
+          >
+            Excluir
+          </button>
+        
       </section>
     </div>
   );
