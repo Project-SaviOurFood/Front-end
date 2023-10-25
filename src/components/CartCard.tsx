@@ -85,12 +85,13 @@ export default function CartCard({
                     }
       </section>
 
-      <section className="my-12 flex items-center justify-center bg-vermelho">
+      <section className="my-12 flex items-center justify-center bg-vermelho font-bold mt-9">
      
           <button
+          className="hover:underline opacity-80"
             type="button"
             onClick={() => deleteProductCart(id)}
-            className=" mx-auto hover:underline opacity-80" 
+            
             id="botaoFinalizar"
           >
             Excluir
