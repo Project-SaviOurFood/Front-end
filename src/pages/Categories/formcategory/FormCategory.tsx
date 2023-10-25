@@ -130,7 +130,7 @@ export default function FormCategory() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => updateState(e)}
           />
         </div>
-        <button type="submit">
+        <button type="submit" id="cadastrar">
           {id === undefined ? "Cadastrar" : "Editar"}
         </button>
       </form>
