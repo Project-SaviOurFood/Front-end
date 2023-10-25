@@ -1,6 +1,9 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './NavBar.css'
+import { UserContext } from '../../context/UserContext'
+import { GeneralContext } from '../../context/GeneralContext'
+import { get } from '../../service/Service'
 
 type IRenderSearch = {
     renderSearch?: boolean
@@ -10,6 +13,27 @@ type IRenderSearch = {
 function NavBar({ renderSearch = false }: IRenderSearch) {
     const [search, setSearch] = useState<string>("");
     const navigate = useNavigate();
+    const {userResponse: {token}} = useContext(UserContext);
+    const {setFilterProducts, getProducts, productResponse} = useContext(GeneralContext);
+
+    async function findProductsByName() {
+        if (search != ""){
+        await get(`/product/name/${search}`, setFilterProducts, {
+          headers: {
+            Authorization: token,
+          },
+        });
+    } else {
+        getProducts();
+        setFilterProducts(productResponse)
+    }
+      }
+
+    useEffect(() => {
+    findProductsByName();
+    }, [search])
+
+
     return (
         <>
             <nav className='bg-white px-4 fixed w-full top-0 z-10'>

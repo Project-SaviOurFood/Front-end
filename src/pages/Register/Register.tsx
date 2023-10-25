@@ -63,7 +63,7 @@ export default function Register() {
             <form onSubmit={postRegister} id="container" className=" bg-white rounded-lg mt-8 bg-no-repeat">
                 <section>
                     <label htmlFor="name" className="text-xl flex justify-center">
-                        Name
+                        Nome
                         <input
                         className="pr-2 pl-2"
                             id="name"
@@ -119,7 +119,7 @@ export default function Register() {
 
                 </section>
                 <section className="text-xl h-12 flex justify-center mt-3">
-                    <button id="buttonCancel" onClick={() => navigate('/home')} >Cancelar</button>
+                    <button id="buttonCancel" onClick={() => navigate('/')} >Cancelar</button>
                     <button type="submit" id="buttonRegister">Cadastrar</button>
                 </section>
                 </form>

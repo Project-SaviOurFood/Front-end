@@ -41,12 +41,12 @@ export function GeneralProvider({ children }: IChildren) {
   const [isOPen, setIsOpen] = useState(false);
 
 
-  const { userResponse: { token }, handleLogout } = useContext(UserContext);
+  const { userResponse: {token}, handleLogout } = useContext(UserContext);
 
   async function getProducts() {
     try {
       await get('/product', setProductResponse, {
-        headers: { Authorization: token },
+        headers: { Authorization:token },
       });
     } catch (error: any) {
       if (error.toString().includes('403')) {

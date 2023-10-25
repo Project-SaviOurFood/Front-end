@@ -7,7 +7,7 @@ import { GeneralContext } from '../../context/GeneralContext';
 
 type ICategoryInfo = {
     categories: {
-        id: number,
+        id: number | undefined,
         type: string,
         description: string,
     }
@@ -26,7 +26,7 @@ return (
   <div className="mx-4 my-2 shadow-md w-11/12 min">
     <ReactModal isOpen={isOPen}
     style={{overlay: {
-      backgroundColor: 'transparent',
+      backgroundColor: 'transparent'
     },
       content: {
       top: '50%',
