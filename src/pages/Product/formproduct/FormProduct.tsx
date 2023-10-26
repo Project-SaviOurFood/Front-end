@@ -145,7 +145,7 @@ export default function FormProduct() {
               type="text"
               placeholder="Name"
               name="name"
-              required
+              required={'O campo é Obrigátorio'}
             />
           </div>
           <div className='p-2'>
@@ -195,11 +195,13 @@ export default function FormProduct() {
               ))}
             </select>
           </div>
-          <button className="bg-vermelho rounded-md p-3 font-semibold" disabled={carregandoTema} type='submit'>
-            {carregandoTema ? <span>Carregando...</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
+          <button  className={carregandoTema ? 'rounded-md p-3 font-semibold bg-slate-300 opacity-60' : 'rounded-md p-3 font-semibold bg-vermelho' } disabled={carregandoTema} type='submit'>
+            {id !== undefined ? 'Editar' : 'Cadastrar'}
           </button>
         </form>
       </div>
 
   );
 }
+
+
