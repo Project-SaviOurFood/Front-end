@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import "../components/FooterStyle.css";
 
 function Footer() {
   const {
