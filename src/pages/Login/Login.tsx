@@ -4,6 +4,7 @@ import ILogin from "../../interfaces/ILogin";
 import { UserContext } from "../../context/UserContext";
 import { RotatingLines } from "react-loader-spinner";
 import "../../pages/Login/Style.css";
+import ImgLogin from '../../assets/imgman.png';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -88,7 +89,7 @@ export default function Login() {
           </button>
         </section>
       </form>
-      <img src="\src\assets\imgman.png" alt="" className="imglogin" />{" "}
+      <img src={ImgLogin} alt="" className="imglogin" />{" "}
     </div>
   );
 }

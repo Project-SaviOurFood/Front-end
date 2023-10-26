@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './HeaderFilter.css'
+import Logo from '../../assets/saviourfood.png';
+import Carrinhos from '../../assets/carrinhos.png';
 
 
 function HeaderFilter() {
@@ -14,7 +16,7 @@ const [search, setSearch] = useState<string>("");
                 <ul className=''>
                     <section>
                         <li>
-                            <Link to="/products"><img src="src/assets/saviourfood.png" alt='logo' width={75} height={150} /></Link>
+                            <Link to="/products"><img src={Logo} alt='logo' width={75} height={150} /></Link>
                         </li>
                     </section>
                     <section className='w-3/4 text-center'>
@@ -33,7 +35,7 @@ const [search, setSearch] = useState<string>("");
                     </section>
                     <section>
                         <li>
-                            <Link to="/cart"><img src="src/assets/carrinhos.png" alt='carrinho' id='cart'  width={40} height={100}/></Link>
+                            <Link to="/cart"><img src={Carrinhos} alt='carrinho' id='cart'  width={40} height={100}/></Link>
                         </li>
                     </section>
                 </ul>

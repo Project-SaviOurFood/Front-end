@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+import Logo from '../assets/saviourfood.png';
 
 export default function HeaderHome() {
   const {
@@ -16,7 +17,7 @@ export default function HeaderHome() {
           <Link to="/">
           <div className="mt-2">
               <img
-                src="src/assets/saviourfood.png"
+                src={Logo}
                 alt="Logo Image"
                 width={100}
                 height={100}

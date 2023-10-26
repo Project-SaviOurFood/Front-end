@@ -4,6 +4,8 @@ import './NavBar.css'
 import { UserContext } from '../../context/UserContext'
 import { GeneralContext } from '../../context/GeneralContext'
 import { get } from '../../service/Service'
+import Cart from '../../assets/cart.png';
+import Logo from '../../assets/saviourfood.png';
 
 type IRenderSearch = {
     renderSearch?: boolean
@@ -40,7 +42,7 @@ function NavBar({ renderSearch = false }: IRenderSearch) {
                 <ul className='flex justify-between items-center'>
                     <section>
                         <li>
-                            <Link to="/"><img src="src/assets/saviourfood.png" alt='logo' width={100} height={100} /></Link>
+                            <Link to="/"><img src={Logo} alt='logo' width={100} height={100} /></Link>
                         </li>
                     </section>
                     <section>
@@ -68,7 +70,7 @@ function NavBar({ renderSearch = false }: IRenderSearch) {
 
                     <section>
                         <li>
-                            <Link to="/cart"><img src="src/assets/cart.png" alt='carrinho' width={50} height={50} /></Link>
+                            <Link to="/cart"><img src={Cart} alt='carrinho' width={50} height={50} /></Link>
                         </li>
                     </section>
                 </ul>

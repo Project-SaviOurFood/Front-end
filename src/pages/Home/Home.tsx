@@ -4,6 +4,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { motion } from "framer-motion";
 import HeaderHome from "../../components/HeaderHome";
 import mockCategories from "../../utils/mockCategories";
+import Globo from '../../assets/rede-global 1.png';
+import Team from '../../assets/team.png';
+import Community from '../../assets/community.png';
+
 
 export default function Home() {
   const carousel = useRef<HTMLDivElement | any>(null);
@@ -95,14 +99,14 @@ export default function Home() {
                 onClick={() => handleImageClick("NOSSA EQUIPE")}
                 className={isTeamSelected ? "selected" : ""}
               >
-                <img src="src/assets/team.png" alt="" className="icon" />
+                <img src={Team} alt="" className="icon" />
               </div>
               <div
                 onClick={() => handleImageClick("NOSSA MISSÃO")}
                 className={isMissionSelected ? "selected" : ""}
               >
                 <img
-                  src="src/assets/rede-global 1.png"
+                  src={Globo}
                   alt="Icon general"
                   className="icon"
                 />
@@ -111,7 +115,7 @@ export default function Home() {
                 onClick={() => handleImageClick("NOSSA COMUNIDADE")}
                 className={isCommunitySelected ? "selected" : ""}
               >
-                <img src="src/assets/community.png" alt="" className="icon" />
+                <img src={Community} alt="" className="icon" />
               </div>
             </div>
             <h3 className="mt-6 text-xl font-bold">{selectedText}</h3>

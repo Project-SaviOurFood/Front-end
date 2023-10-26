@@ -3,6 +3,7 @@ import { GeneralContext } from "../context/GeneralContext";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/navbar/NavBar";
+import Check from "../assets/verificado.png"
 
 export default function PurchaseSuccess() {
     const {cart, total, ong, setCart, setTotal} = useContext(GeneralContext);
@@ -20,7 +21,7 @@ export default function PurchaseSuccess() {
         <div>
             <NavBar />
             <section>
-                <img src="src/assets/verificado.png" alt="Success purchase" width={150} height={150} />
+                <img src={Check} alt="Success purchase" width={150} height={150} />
                 <h1>Compra Finalizada com Sucesso</h1>
             </section>
             <section>
