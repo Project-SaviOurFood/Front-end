@@ -43,7 +43,7 @@ export default function PurchaseSuccess() {
                 </div>
             ))}
             <section className="mb-4">
-            <span className="my-4 hover:no-underline opacity-80 font-bold text-2xl"> Total: R${total}</span>
+            <span className="my-4 hover:no-underline opacity-80 font-bold text-2xl"> Total: R${total.toFixed(2)}</span>
             </section>
            
             </section>
