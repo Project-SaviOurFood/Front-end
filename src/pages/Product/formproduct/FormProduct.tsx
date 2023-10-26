@@ -145,7 +145,7 @@ export default function FormProduct() {
               type="text"
               placeholder="Name"
               name="name"
-              required={'O campo é Obrigátorio'}
+              required
             />
           </div>
           <div className='p-2'>
