@@ -62,7 +62,7 @@ export default function HeaderHome() {
           <button
             type="button"
             onClick={() => navigate("/register")}
-        className="bg-vermelho rounded-md mr-5 py-1 px-3 font-medium"
+        className="bg-vermelho rounded-md mr-5 py-1 px-3 font-medium text-amarelo hover:underline"
           >
             Cadastre-se
           </button>

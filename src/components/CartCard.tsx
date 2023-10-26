@@ -44,12 +44,12 @@ export default function CartCard({
   }, [cart.length, qtd]);
 
   return (
-  <div className="my-4 hover:shadow-xl hover:rounded-md">
-      <div className="flex flex-col items-center text-center">
+  <div className="my-4 w-full flex">
+      <div className="flex items-center text-center justify-around">
         <section>
           <label htmlFor="image" >
             <input
-              className="object-contain mt-2"
+              className="object-contain mt-2 border-none"
               id="image"
               type="image"
               name="image"
@@ -60,14 +60,14 @@ export default function CartCard({
             />
           </label>
         </section>
-        <h2 className="font-bold p-3 w-3/5 text-xl">
+        <h2 className="font-bold p-3 w-3/5 max-w-md text-xl" id="cart-text">
           {name}
         </h2>
         <section>
-          <h4 className="font-bold text-2xl mb-2">R$ {value.toFixed(2)}</h4>
+          <h4 className="font-bold text-2xl mb-2 w-36">R$ {value.toFixed(2)}</h4>
         </section>
       </div>
-      <section className="flex gap-3 items-center justify-center mb-16">
+      <section className="flex items-center justify-center">
         <button id="mais" type="button" onClick={() => setQtd(qtd + 1)}>
           <img src={Mais} alt="Sinal de mais" />
         </button>
@@ -82,10 +82,10 @@ export default function CartCard({
       </section>
 
 
-      <section className="my-12 flex items-center justify-center bg-vermelho font-bold mt-9">
+      <section className="flex items-center justify-center font-bold mt-12 ml-8">
      
           <button
-          className="hover:underline opacity-80"
+          className="text-center text-lg hover:underline opacity-80"
             type="button"
             onClick={() => deleteProductCart(id)}
             

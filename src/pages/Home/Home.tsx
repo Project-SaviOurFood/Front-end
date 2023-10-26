@@ -68,9 +68,9 @@ export default function Home() {
             >
               {mockCategories.map((category) => (
                 <motion.div className="item" key={category.id}>
-                  <h3>{category.type}</h3>
-                  <img src={category.image} alt="Images" />
-                  <p>{category.description}</p>
+                  <h3 className="p-2">{category.type}</h3>
+                  <img id="image-home"src={category.image} alt="Images" />
+                  <p className="p-2">{category.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -93,13 +93,13 @@ export default function Home() {
           </div>
         </section>
         <section className="flex justify-center mt-16">
-          <div className="flex flex-col items-center p-8 w-4/5 text-center rounded-md shadow-md bg-lime-200">
+          <div className="flex flex-col items-center p-8 w-4/5 text-center rounded-md shadow-md bg-lime-200 mb-10">
             <div className="flex">
               <div
                 onClick={() => handleImageClick("NOSSA EQUIPE")}
                 className={isTeamSelected ? "selected" : ""}
               >
-                <img src={Team} alt="" className="icon" />
+                <img src={Team} alt="" className="icon cursor-pointer" />
               </div>
               <div
                 onClick={() => handleImageClick("NOSSA MISSÃO")}
@@ -108,19 +108,20 @@ export default function Home() {
                 <img
                   src={Globo}
                   alt="Icon general"
-                  className="icon"
+                  className="icon cursor-pointer"
                 />
               </div>
               <div
                 onClick={() => handleImageClick("NOSSA COMUNIDADE")}
                 className={isCommunitySelected ? "selected" : ""}
               >
-                <img src={Community} alt="" className="icon" />
+                <img src={Community} alt="" className="icon cursor-pointer" />
               </div>
             </div>
             <h3 className="mt-6 text-xl font-bold">{selectedText}</h3>
             <motion.div
-              className="mt-6 w-4/5 h-32"
+              id="motionCard"
+              className="mt-6 w-4/5 h-36 mb-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}

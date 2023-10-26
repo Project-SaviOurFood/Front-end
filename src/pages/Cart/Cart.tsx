@@ -22,38 +22,40 @@ export default function Cart() {
 
   return (
     <div className="">
-      <NavBar />
-      <h1 className="flex justify-center text-3xl font-bold">Carrinho</h1>
-      <div className="flex justify-center mt-4">
-        <div className="flex flex-col items-center bg-white w-2/5 rounded-md">
-          {cart.map(({ id, name, picture, value, quantity }) => (
-            <CartCard productInfo={{ id, name, picture, value, quantity }} />
-          ))}
-          <h2 className="mt-4 text-xl font-semibold">Escolha a instituição que deseja ajudar!!!</h2>
-          <p className="text-2xl font-bold">Total: R${total.toFixed(2)}</p>
-          <select
-            className="my-4 mb-6 font-semibold text-xl px-0 bg-gray-200 rounded-md"
-            name="select"
-            value={ong}
-            id="select"
-            onChange={({ target: { value } }) => setOng(value)}
-          >
-            {instituicoes.map((ong) => (
-              <option value={ong}>{ong}</option>
+      <NavBar />    
+        <div className="flex  flex-col justify-center mt-4">
+        <h1 className="flex justify-center text-3xl font-bold">Carrinho</h1>     
+          <div className="flex flex-col items-center bg-white rounded-md" id="container-cart">
+            {cart.map(({ id, name, picture, value, quantity }) => (
+              <CartCard productInfo={{ id, name, picture, value, quantity }} />
             ))}
-          </select>
-          <section className="mb-4">
-            <button
-              disabled={cart.length == 0}
-              onClick={() => navigate("/finish")}
-              className="bg-vermelho w-36 p-2 rounded text-amarelo"
-              id="botaoFinalizar"
+            <h2 className="mt-4 text-xl font-semibold">Escolha a instituição que deseja ajudar!!!</h2>
+            <p className="text-2xl font-bold">Total: R${total.toFixed(2)}</p>
+            <select
+              className="my-4 mb-6 font-semibold text-xl px-0 bg-gray-200 rounded-md"
+              name="select"
+              value={ong}
+              id="select"
+              onChange={({ target: { value } }) => setOng(value)}
             >
-              Finalizar Compra
-            </button>
-          </section>
+              {instituicoes.map((ong) => (
+                <option value={ong}>{ong}</option>
+              ))}
+            </select>
+            <section className="mb-4">
+              <button
+                disabled={cart.length == 0}
+                onClick={() => navigate("/finish")}
+                className="bg-vermelho w-36 p-2 rounded text-amarelo hover:underline"
+                id="botaoFinalizar"
+              >
+                Finalizar Compra
+              </button>
+            </section>
+          </div>
         </div>
       </div>
-    </div>
+
+
   );
 }

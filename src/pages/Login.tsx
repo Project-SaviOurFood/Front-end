@@ -50,7 +50,7 @@ export default function Login() {
                             onChange={(e) => (updateState(e))}
                         />
                     </label>
-                  
+
                 </section>
                 <section>
                     <label htmlFor="password">
@@ -76,16 +76,17 @@ export default function Login() {
                             width="24"
                             visible={true}
                         /> :
-                            <span>Entrar</span>}
+                            <span>Entrar</span>
+                        }
                     </button>
                 </section>
             </form>
             <div> <img src="\src\assets\imgman.png" alt="" className="imglogin" /> </div>
-          
+
         </div>
-    
+
     );
 
 }
 
-  
+
