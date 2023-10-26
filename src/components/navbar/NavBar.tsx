@@ -16,7 +16,7 @@ function NavBar({ renderSearch = false }: IRenderSearch) {
     const [search, setSearch] = useState<string>("");
     const navigate = useNavigate();
     const {userResponse: {token}} = useContext(UserContext);
-    const {setFilterProducts, getProducts, productResponse} = useContext(GeneralContext);
+    const {setFilterProducts, getProducts, productResponse, cart} = useContext(GeneralContext);
 
     async function findProductsByName() {
         if (search != ""){
@@ -68,9 +68,10 @@ function NavBar({ renderSearch = false }: IRenderSearch) {
                         <button className="font-bold hover:underline" type='button' onClick={() => navigate('/registerProduct')} >Cadastrar Produto</button>
                     </section>
 
-                    <section>
-                        <li>
-                            <Link to="/cart"><img src={Cart} alt='carrinho' width={50} height={50} /></Link>
+                    <section >
+                        <li className='flex flex-row-reverse justify-center'>
+                            <p id="qtd-cart">{cart.length}</p>
+                            <Link to="/cart"><img src={Cart} alt='carrinho' width={50} height={50} id="img-cart"/></Link>
                         </li>
                     </section>
                 </ul>

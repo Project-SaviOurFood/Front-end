@@ -66,11 +66,11 @@ export default function Register() {
         id="container"
         className=" bg-white rounded-lg mt-8 bg-no-repeat"
       >
-        <section>
-          <label htmlFor="name" className="text-xl flex justify-center">
-            Nome:
+        <section className="ml-56 mb-4">
+          <label htmlFor="name" className="text-xl flex flex-col justify-center">
+            <span className="">Nome</span>
             <input
-              className="pr-2 pl-2"
+              className="pr-2 pl-2 w-56 ml-3 "
               id="name"
               type="text"
               name="name"
@@ -79,11 +79,11 @@ export default function Register() {
             />
           </label>
         </section>
-        <section>
-          <label htmlFor="email" className="text-xl flex justify-center">
-            Email:
+        <section className="ml-56 mb-4">
+          <label htmlFor="email" className="text-xl flex flex-col justify-center">
+            Email
             <input
-              className="pr-2 pl-2"
+              className="pr-2 pl-2 w-56 ml-3"
               id="email"
               type="email"
               name="email"
@@ -92,11 +92,11 @@ export default function Register() {
             />
           </label>
         </section>
-        <section>
-          <label htmlFor="password" className="text-xl flex justify-center">
-            Senha:
+        <section className="ml-56 mb-4">
+          <label htmlFor="password" className="text-xl flex flex-col justify-center">
+            Senha
             <input
-              className="pr-2 pl-2"
+              className="pr-2 pl-2 w-56 ml-3"
               id="password"
               type="password"
               name="password"
@@ -105,11 +105,11 @@ export default function Register() {
             />
           </label>
         </section>
-        <section>
-          <label htmlFor="picture" className="text-xl flex justify-center">
-            Foto:
+        <section className="ml-56">
+          <label htmlFor="picture" className="text-xl flex flex-col justify-center">
+            Foto
             <input
-              className="pr-2 pl-2"
+              className="pr-2 pl-2 w-56 ml-3 mb-4"
               id="picture"
               type="text"
               name="picture"
