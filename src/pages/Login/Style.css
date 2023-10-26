@@ -1,7 +1,7 @@
 .imglogin{
     background-image: url(../../assets/imgman.png);
     height: 39rem;
-    margin-top: -333px;
+    margin-top: -450px;
     margin-left: -475px;
     border-radius: 10px 0px 0px 10px;
 }
@@ -27,7 +27,7 @@ button{
 #botaoEntrar {
     border-radius: 8px;
     border: 1px solid transparent;
-    padding: 0.1em 0.7em;
+    padding: 0.3em 1.2em;
     font-size: 23px;
     font-weight: 400;
     font-family: inherit;

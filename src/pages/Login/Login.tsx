@@ -36,12 +36,12 @@ export default function Login() {
 
   return (
     <div className=" bg-white rounded-lg mt-8 bg-no-repeat w-24 " id="cont">
-      <form onSubmit={userLogin}>
+      <form onSubmit={userLogin} className="flex">
         <section className="mt-56 ml-40 w-80">
-          <label htmlFor="user" className="text-xl ">
+          <label htmlFor="user" className="text-xl">
             Email
             <input
-              className="pr-2 pl-2"
+              className="pr-2 pl-2 w-56 block ml-3"
               id="user"
               type="email"
               name="email"
@@ -50,11 +50,11 @@ export default function Login() {
             />
           </label>
         </section>
-        <section>
-          <label htmlFor="password" className="text-xl mt-56 ml-40 w-80">
+        <section className="mt-3 ml-40 w-80 mb-5">
+          <label htmlFor="password" className="text-xl">
             Senha
             <input
-              className="pr-2 pl-2"
+              className="pr-2 pl-2 w-56 block ml-3"
               id="password"
               type="password"
               name="password"
@@ -64,14 +64,14 @@ export default function Login() {
           </label>
         </section>
 
-        <section className="ml-48">
+        <section className="ml-48 mb-5">
           <p className="text-xl ">
             Não possui conta? <Link to="/register">Cadastre-se</Link>
           </p>
         </section>
 
         <section className="">
-          <button type="submit"
+          <button className="" type="submit"
                 id="botaoCarregar">
             {isLoading ? (
               <RotatingLines
@@ -82,7 +82,7 @@ export default function Login() {
                 visible={true}
               />
             ) : (
-              <span className="fixed" id="botaoEntrar">
+              <span className="hover:underline" id="botaoEntrar">
                 Entrar
               </span>
             )}

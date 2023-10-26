@@ -38,8 +38,8 @@
 #image{
 
     object-fit:contain;
-    max-width:170;
-    max-height:190;
+    max-width:150;
+    max-height:150;
 }
 
 .botao{
@@ -83,4 +83,17 @@ body{
     justify-content: center;
     display: flex;
     align-items: center;
+}
+
+#container-cart{
+
+    width:80%;
+    margin:0 auto;
+}
+
+
+#cart-text{
+
+
+    min-width: 448px;
 }
