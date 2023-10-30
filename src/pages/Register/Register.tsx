@@ -4,6 +4,8 @@ import { registerUser } from "../../service/Service";
 import { useNavigate } from "react-router-dom";
 import IUser from "../../interfaces/IUser";
 import { toastAlerta } from "../../utils/toastAlert";
+import imgLogin from '../../assets/imgman.png'
+import imgFruit from '../../assets/Frutas.jpg'
 
 import "./RegisterStyle.css";
 
@@ -63,7 +65,7 @@ export default function Register() {
     <div className="flex justify-center contain">
       <img
         className="hidden rounded-l-md md:block md:w-3/5 md:max-w-md object-cover"
-        src="\src\assets\Frutas.jpg"
+        src={imgFruit}
         alt=""
       />
       <div
@@ -75,7 +77,7 @@ export default function Register() {
         </h1>
         <img
           className="my-4 h-32 w-full object-cover md:hidden"
-          src="\src\assets\imgman.png"
+          src={imgLogin}
           alt=""
         />
         <form
