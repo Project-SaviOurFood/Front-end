@@ -32,3 +32,4 @@ export default [
     description: "Bebida naturalmente doce feita de frutas espremidas..",
   },
 ];
+

@@ -43,13 +43,15 @@ export default function Home() {
     <>
       <HeaderHome />
       <main className="">
-        <section className="flex flex-col md:w-4/5 items-center 
+        <section
+          className="flex flex-col md:w-4/5 items-center 
         md:flex-row md:ml-24 md:mt-24 md:h-24 md:min-h-full
-        lg:ml-28">
+        lg:ml-28"
+        >
           <h2 className="font-bold text-2xl leading-tight mt-4 md:hidden">
             SAVI OUR FOOD
           </h2>
-        <h2 className="font-bold text-2xl leading-tight hidden md:block md">
+          <h2 className="font-bold text-2xl leading-tight hidden md:block md">
             SAVI <br /> OUR <br /> FOOD
           </h2>
           <p className="text-center w-4/5 md:w-4/12 md:ml-6 md:mt-2 lg:w-5/12">
@@ -62,7 +64,7 @@ export default function Home() {
         <section className="flex justify-center items-center">
           <motion.div
             ref={carousel}
-        className="carousel flex w-11/12 md:w-4/5"
+            className="carousel flex w-11/12 md:w-4/5"
             whileTap={{ cursor: "grabbing" }}
           >
             <motion.div
@@ -81,10 +83,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        <section
-          id="about"
-          className=""
-        >
+        <section id="about" className="">
           <div className="flex flex-col items-center">
             <h3 className="text-xl font-bold">SOBRE</h3>
             <p className="mt-3 text-center w-11/12 md:w-4/5">
@@ -97,9 +96,11 @@ export default function Home() {
           </div>
         </section>
         <section className="flex justify-center mt-16">
-          <div className="flex flex-col items-center p-8 text-center rounded-lg shadow-md bg-lime-200 mb-10
+          <div
+            className="flex flex-col items-center p-8 text-center rounded-lg shadow-md bg-lime-200 mb-10
           md:w-4/5
-          ">
+          "
+          >
             <div className="flex">
               <div
                 onClick={() => handleImageClick("NOSSA EQUIPE")}

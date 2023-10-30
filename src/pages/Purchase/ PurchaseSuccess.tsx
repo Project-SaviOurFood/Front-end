@@ -3,6 +3,7 @@ import { GeneralContext } from "../../context/GeneralContext";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../../components/navbar/NavBar";
+import Check from '../../assets/verificado.png';
 
 export default function PurchaseSuccess() {
   const { cart, total, ong, setCart, setTotal } = useContext(GeneralContext);
@@ -27,7 +28,7 @@ export default function PurchaseSuccess() {
             <h2 className="font-bold flex justify-center mx-20 text-2xl">Compra Finalizada com Sucesso</h2>
             <img
              className="flex mr-0 -mt-9"
-                src="src/assets/verificado.png"
+                src={Check}
                 alt="Success purchase"
                 width={55}
                 height={55}
@@ -42,7 +43,7 @@ export default function PurchaseSuccess() {
                 </div>
             ))}
             <section className="mb-4">
-            <span className="my-4 hover:no-underline opacity-80 font-bold text-2xl"> Total: R${total}</span>
+            <span className="my-4 hover:no-underline opacity-80 font-bold text-2xl"> Total: R${total.toFixed(2)}</span>
             </section>
            
             </section>
