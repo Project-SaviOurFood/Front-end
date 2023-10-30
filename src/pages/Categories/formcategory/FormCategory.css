@@ -7,3 +7,14 @@
     justify-content: center;
     align-items: end;
 }
+
+#cadastrar {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.1em 0.7em;
+    font-size: 23px;
+    font-weight: 400;
+    font-family: inherit;
+    background-color: #FF5757;
+    cursor: pointer;
+}

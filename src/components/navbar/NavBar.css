@@ -2,15 +2,38 @@
 
     background-image: url(../../assets/lupa.png);
     background-repeat: no-repeat;
-    background-size: 20px;
+    background-size:25px;
     background-position: center;
-    padding-top:0.66rem;
-    padding-bottom:0.75rem;
+    padding-top:0.77rem;    
+    padding-bottom:0.80rem;
     border-radius: 0px 10px 10px 0px;
 }
+
+#img-cart:hover{
+
+
+    opacity:0.8
+
+}
+
+#img-cart:active{
+
+
+    opacity:0.6    
+
+}
+
+
+
 
 #search{
 
     border-radius: 10px 0px 0px 10px;
 
+}
+
+
+
+#qtd-cart{
+    font-weight: bold;
 }

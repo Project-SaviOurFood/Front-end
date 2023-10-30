@@ -79,9 +79,7 @@ export default function Login() {
                             <span>Entrar</span>}
                     </button>
                 </section>
-            </form>
-            <div> <img src="\src\assets\imgman.png" alt="" className="imglogin" /> </div>
-          
+            </form>          
         </div>
     
     );

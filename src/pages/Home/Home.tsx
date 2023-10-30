@@ -4,6 +4,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { motion } from "framer-motion";
 import HeaderHome from "../../components/HeaderHome";
 import mockCategories from "../../utils/mockCategories";
+import Globo from "../../assets/rede-global 1.png";
+import Team from "../../assets/team.png";
+import Community from "../../assets/community.png";
 
 export default function Home() {
   const carousel = useRef<HTMLDivElement | any>(null);
@@ -39,34 +42,39 @@ export default function Home() {
   return (
     <>
       <HeaderHome />
-      <main className="max-w-screen-2xl">
-        <section className="ml-36 flex mt-20">
-          <h2 className="text-5xl font-bold leading-tight">
+      <main className="">
+        <section className="flex flex-col md:w-4/5 items-center 
+        md:flex-row md:ml-24 md:mt-24 md:h-24 md:min-h-full
+        lg:ml-28">
+          <h2 className="font-bold text-2xl leading-tight mt-4 md:hidden">
+            SAVI OUR FOOD
+          </h2>
+        <h2 className="font-bold text-2xl leading-tight hidden md:block md">
             SAVI <br /> OUR <br /> FOOD
           </h2>
-          <p className="ml-12 mt-5 max-w-md text-center text-lg font-medium">
+          <p className="text-center w-4/5 md:w-4/12 md:ml-6 md:mt-2 lg:w-5/12">
             Juntos, podemos reduzir o desperdício de alimentos, economizar
             dinheiro e, mais importante, fazer a diferença na vida daqueles que
             precisam.
           </p>
         </section>
 
-        <section className="app mt-16 ml-32">
+        <section className="flex justify-center items-center">
           <motion.div
             ref={carousel}
-            className="carousel"
+        className="carousel flex w-11/12 md:w-4/5"
             whileTap={{ cursor: "grabbing" }}
           >
             <motion.div
-              className="inner flex"
+              className="flex"
               drag="x"
               dragConstraints={{ right: 0, left: -width }}
             >
               {mockCategories.map((category) => (
                 <motion.div className="item" key={category.id}>
-                  <h3>{category.type}</h3>
-                  <img src={category.image} alt="Images" />
-                  <p>{category.description}</p>
+                  <h3 className="">{category.type}</h3>
+                  <img id="image-home" src={category.image} alt="Images" />
+                  <p className="">{category.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -75,11 +83,11 @@ export default function Home() {
 
         <section
           id="about"
-          className="flex flex-col justify-center items-center mt-16"
+          className=""
         >
-          <div className="w-3/5 text-center">
+          <div className="flex flex-col items-center">
             <h3 className="text-xl font-bold">SOBRE</h3>
-            <p className="mt-3">
+            <p className="mt-3 text-center w-11/12 md:w-4/5">
               No Save Our Food, estamos comprometidos com uma causa que é tanto
               simples quanto profundamente significativa: reduzir o desperdício
               de alimentos enquanto ajudamos a alimentar aqueles que mais
@@ -89,34 +97,37 @@ export default function Home() {
           </div>
         </section>
         <section className="flex justify-center mt-16">
-          <div className="flex flex-col items-center p-8 w-4/5 text-center rounded-md shadow-md bg-lime-200">
+          <div className="flex flex-col items-center p-8 text-center rounded-lg shadow-md bg-lime-200 mb-10
+          md:w-4/5
+          ">
             <div className="flex">
               <div
                 onClick={() => handleImageClick("NOSSA EQUIPE")}
                 className={isTeamSelected ? "selected" : ""}
               >
-                <img src="src/assets/team.png" alt="" className="icon" />
+                <img src={Team} alt="" className="icon cursor-pointer" />
               </div>
               <div
                 onClick={() => handleImageClick("NOSSA MISSÃO")}
                 className={isMissionSelected ? "selected" : ""}
               >
                 <img
-                  src="src/assets/rede-global 1.png"
+                  src={Globo}
                   alt="Icon general"
-                  className="icon"
+                  className="icon cursor-pointer"
                 />
               </div>
               <div
                 onClick={() => handleImageClick("NOSSA COMUNIDADE")}
                 className={isCommunitySelected ? "selected" : ""}
               >
-                <img src="src/assets/community.png" alt="" className="icon" />
+                <img src={Community} alt="" className="icon cursor-pointer" />
               </div>
             </div>
             <h3 className="mt-6 text-xl font-bold">{selectedText}</h3>
             <motion.div
-              className="mt-6 w-4/5 h-32"
+              id="motionCard"
+              className="mt-6 mb-3 md:w-4/5 "
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -141,7 +152,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      
     </>
   );
 }

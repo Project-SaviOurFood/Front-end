@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import "../components/FooterStyle.css";
+import GitHub from '../assets/github.png';
 
 function Footer() {
   const {
@@ -23,7 +23,7 @@ function Footer() {
               Acesse nossa organização no GitHub:{" "}
               <a href="https://github.com/Project-SaviOurFood" target="_blank">
                 <img
-                  src="src/assets/github.png"
+                  src={GitHub}
                   alt="GitHub logo"
                   width={25}
                   height={25}

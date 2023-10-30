@@ -1,82 +1,20 @@
-.imglogin{
-    background-image: url(../../assets/imgman.png);
-    height: 39rem;
-    margin-top: -333px;
-    margin-left: -475px;
-    border-radius: 10px 0px 0px 10px;
-}
-
-
-.input{
-    position: relative;
-    padding: 10px;
-    outline: none;
-    border: 0;
-    background: transparent;
-    border-bottom: 1px solid #000000;
-    color: #BEBEBE;
-}
-
-button{
-    margin: 15px;
-    display: inline;
-    margin-top: 2px;
-    margin-left: 11px;
-}
+.contain {
+    height: 590px;
+  }  
 
 #botaoEntrar {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.1em 0.7em;
-    font-size: 23px;
-    font-weight: 400;
     font-family: inherit;
     background-color: #FF5757;
     color: #FFF480;
     cursor: pointer;
     transition: border-color 0.25s;
-    margin-left: -2rem;
-    margin-top: -13px;
 }
 
 
 #botaoCarregar {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.1em 0.7em;
-    font-size: 4px;
-    font-weight: 400;
     font-family: inherit;
     background-color: #FF5757;
     color: #FFF480;
     cursor: pointer;
     transition: border-color 0.25s;
-    margin-left: 20rem;
-    margin-top: -4px;
 }
-
-#cont{
-    width: 47rem;
-    height: 39rem;
-    margin: -159px 144px 82px 624px;
-}
-  
-
-form{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 13rem;
-}
-
-
-a {
-    font-weight: 500;
-    color: #7A7878;
-    text-decoration: inherit;
-  }
-
-  a:hover {
-    color: #FF5757;
-  }
-
